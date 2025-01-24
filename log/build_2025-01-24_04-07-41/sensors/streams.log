@@ -1,0 +1,26 @@
+[0.021s] Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+[0.088s] [35m[1mConsolidate compiler generated dependencies of target realsense_camera_node[0m
+[0.114s] [ 50%] [32mBuilding CXX object CMakeFiles/realsense_camera_node.dir/src/realsense_camera_node.cpp.o[0m
+[3.474s] [100%] [32m[1mLinking CXX executable realsense_camera_node[0m
+[3.615s] [100%] Built target realsense_camera_node
+[3.631s] Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+[3.644s] Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/roboracing-f1tenth/build/sensors
+[3.652s] -- Install configuration: ""
+[3.653s] -- Installing: /home/ubuntu/roboracing-f1tenth/install/sensors/lib/sensors/realsense_camera_node
+[3.653s] -- Set runtime path of "/home/ubuntu/roboracing-f1tenth/install/sensors/lib/sensors/realsense_camera_node" to ""
+[3.654s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/ament_index/resource_index/package_run_dependencies/sensors
+[3.654s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/ament_index/resource_index/parent_prefix_path/sensors
+[3.654s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/ament_prefix_path.sh
+[3.654s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/ament_prefix_path.dsv
+[3.654s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/path.sh
+[3.654s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/path.dsv
+[3.654s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.bash
+[3.655s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.sh
+[3.655s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.zsh
+[3.655s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.dsv
+[3.655s] -- Installing: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/package.dsv
+[3.655s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/ament_index/resource_index/packages/sensors
+[3.655s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/cmake/sensorsConfig.cmake
+[3.655s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/cmake/sensorsConfig-version.cmake
+[3.655s] -- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/package.xml
+[3.658s] Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/roboracing-f1tenth/build/sensors

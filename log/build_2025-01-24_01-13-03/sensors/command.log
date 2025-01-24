@@ -1,0 +1,4 @@
+Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/roboracing-f1tenth/build/sensors
+Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/roboracing-f1tenth/build/sensors

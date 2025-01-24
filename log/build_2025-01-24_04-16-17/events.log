@@ -1,0 +1,119 @@
+[0.000000] (-) TimerEvent: {}
+[0.000560] (sensors) JobQueued: {'identifier': 'sensors', 'dependencies': OrderedDict()}
+[0.000671] (sensors) JobStarted: {'identifier': 'sensors'}
+[0.012723] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'cmake'}
+[0.013989] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'build'}
+[0.015099] (sensors) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/roboracing-f1tenth/build/sensors', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/roboracing-f1tenth/build/sensors', 'env': OrderedDict([('VNCDESKTOP', 'bbb7d4524d2d:1 (ubuntu)'), ('QT_SCALE_FACTOR', '1'), ('USER', 'ubuntu'), ('SUPERVISOR_GROUP_NAME', 'vnc'), ('HOSTNAME', 'bbb7d4524d2d'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/codium/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('CHROME_DESKTOP', 'codium.desktop'), ('TERM_PROGRAM_VERSION', '1.96.3'), ('GIO_LAUNCHED_DESKTOP_FILE', '/home/ubuntu/Desktop/codium.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/codium/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/codium/codium'), ('LC_CTYPE', 'C.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:abstract=/tmp/dbus-d8nUoaLbJM,guid=aa1b85f45e2138a7ac0f4c4b67930949'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '577'), ('GNOME_KEYRING_CONTROL', '/home/ubuntu/.cache/keyring-8KGS02'), ('UBUNTU_MENUPROXY', '1'), ('COLCON_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GTK_OVERLAY_SCROLLING', '0'), ('ROS_LOCALHOST_ONLY', '0'), ('INSIDE_CAJA_PYTHON', ''), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bbb7d4524d2d:@/tmp/.ICE-unix/68,unix/bbb7d4524d2d:/tmp/.ICE-unix/68'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'MATE'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-6bd464112c.sock'), ('SUPERVISOR_ENABLED', '1'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/home/ubuntu/.cache/keyring-8KGS02/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'MATE'), ('NO_AT_BRIDGE', '1'), ('PASSWD', 'ubuntu'), ('SUPERVISOR_SERVER_URL', 'unix:///var/run/supervisor.sock'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('SUPERVISOR_PROCESS_NAME', 'vnc'), ('PWD', '/home/ubuntu/roboracing-f1tenth/build/sensors'), ('XDG_DATA_DIRS', '/usr/share/gnome:/home/ubuntu/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MATE_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('QT_FONT_DPI', '96')]), 'shell': False}
+[0.051057] (sensors) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099354] (-) TimerEvent: {}
+[0.200062] (-) TimerEvent: {}
+[0.235312] (sensors) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.279331] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.282211] (sensors) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.289803] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.300571] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.300862] (-) TimerEvent: {}
+[0.317171] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.362832] (sensors) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.365017] (sensors) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.401357] (-) TimerEvent: {}
+[0.502365] (-) TimerEvent: {}
+[0.549542] (sensors) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.603232] (-) TimerEvent: {}
+[0.611613] (sensors) StdoutLine: {'line': b'-- Found rclcpp_components: 16.0.11 (/opt/ros/humble/share/rclcpp_components/cmake)\n'}
+[0.637374] (sensors) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.704154] (-) TimerEvent: {}
+[0.725260] (sensors) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.725523] (sensors) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.725588] (sensors) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.726051] (sensors) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.727405] (sensors) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.727599] (sensors) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.727891] (sensors) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.728874] (sensors) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.748174] (sensors) StdoutLine: {'line': b'-- Generating done\n'}
+[0.754452] (sensors) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/roboracing-f1tenth/build/sensors\n'}
+[0.803897] (sensors) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o\x1b[0m\n'}
+[0.804366] (-) TimerEvent: {}
+[0.804714] (sensors) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o\x1b[0m\n'}
+[0.905559] (-) TimerEvent: {}
+[1.007249] (-) TimerEvent: {}
+[1.108274] (-) TimerEvent: {}
+[1.209344] (-) TimerEvent: {}
+[1.310227] (-) TimerEvent: {}
+[1.411249] (-) TimerEvent: {}
+[1.512250] (-) TimerEvent: {}
+[1.613291] (-) TimerEvent: {}
+[1.714266] (-) TimerEvent: {}
+[1.815297] (-) TimerEvent: {}
+[1.916249] (-) TimerEvent: {}
+[2.017302] (-) TimerEvent: {}
+[2.118143] (-) TimerEvent: {}
+[2.219309] (-) TimerEvent: {}
+[2.320268] (-) TimerEvent: {}
+[2.421256] (-) TimerEvent: {}
+[2.522120] (-) TimerEvent: {}
+[2.623164] (-) TimerEvent: {}
+[2.724306] (-) TimerEvent: {}
+[2.825259] (-) TimerEvent: {}
+[2.926339] (-) TimerEvent: {}
+[3.027288] (-) TimerEvent: {}
+[3.128288] (-) TimerEvent: {}
+[3.229291] (-) TimerEvent: {}
+[3.330248] (-) TimerEvent: {}
+[3.431308] (-) TimerEvent: {}
+[3.532130] (-) TimerEvent: {}
+[3.633334] (-) TimerEvent: {}
+[3.734215] (-) TimerEvent: {}
+[3.835464] (-) TimerEvent: {}
+[3.936147] (-) TimerEvent: {}
+[3.950326] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:6:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kclass\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.950579] (sensors) StderrLine: {'line': b'    6 | \x1b[01;31m\x1b[Kclass\x1b[m\x1b[K RealsenseCameraNode : public rclcpp::Node\n'}
+[3.950647] (sensors) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[3.952639] (sensors) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:56\x1b[m\x1b[K,\n'}
+[3.952935] (sensors) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[3.953175] (sensors) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:2\x1b[m\x1b[K:\n'}
+[3.953314] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:17:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KRealsenseCameraNode\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Ksensors\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[KRealsenseCameraNode\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.953382] (sensors) StderrLine: {'line': b'   17 | RCLCPP_COMPONENTS_REGISTER_NODE(sensors::\x1b[01;31m\x1b[KRealsenseCameraNode\x1b[m\x1b[K)\n'}
+[3.953439] (sensors) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.953493] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:6:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KRealsenseCameraNode\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[3.953551] (sensors) StderrLine: {'line': b'    6 | class \x1b[01;36m\x1b[KRealsenseCameraNode\x1b[m\x1b[K : public rclcpp::Node\n'}
+[3.953606] (sensors) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.953667] (sensors) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:56\x1b[m\x1b[K,\n'}
+[3.953793] (sensors) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[3.953918] (sensors) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:2\x1b[m\x1b[K:\n'}
+[3.954163] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:17:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.954366] (sensors) StderrLine: {'line': b'   17 | \x1b[01;31m\x1b[KRCLCPP_COMPONENTS_REGISTER_NODE\x1b[m\x1b[K(sensors::RealsenseCameraNode)\n'}
+[3.954478] (sensors) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.037327] (-) TimerEvent: {}
+[4.138198] (-) TimerEvent: {}
+[4.239388] (-) TimerEvent: {}
+[4.340323] (-) TimerEvent: {}
+[4.441305] (-) TimerEvent: {}
+[4.485188] (sensors) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:57\x1b[m\x1b[K,\n'}
+[4.485663] (sensors) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:55\x1b[m\x1b[K,\n'}
+[4.485866] (sensors) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18\x1b[m\x1b[K,\n'}
+[4.486005] (sensors) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:2\x1b[m\x1b[K:\n'}
+[4.486282] (sensors) StderrLine: {'line': b'/opt/ros/humble/include/class_loader/class_loader/meta_object.hpp: In instantiation of \xe2\x80\x98\x1b[01m\x1b[KB* class_loader::impl::MetaObject<C, B>::create() const [with C = int; B = rclcpp_components::NodeFactory]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.486526] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/meta_object.hpp:216:7:\x1b[m\x1b[K   required from here\n'}
+[4.486623] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/class_loader/class_loader/meta_object.hpp:218:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kint*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp_components::NodeFactory*\x1b[m\x1b[K\xe2\x80\x99 in return\n'}
+[4.486743] (sensors) StderrLine: {'line': b'  218 |     return \x1b[01;31m\x1b[Knew C\x1b[m\x1b[K;\n'}
+[4.487645] (sensors) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.487980] (sensors) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[4.488288] (sensors) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[Kint*\x1b[m\x1b[K\n'}
+[4.542135] (-) TimerEvent: {}
+[4.545841] (sensors) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/sensors.dir/build.make:76: CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o] Error 1\n'}
+[4.546092] (sensors) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/sensors.dir/all] Error 2\n'}
+[4.546155] (sensors) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[4.643246] (-) TimerEvent: {}
+[4.744208] (-) TimerEvent: {}
+[4.845347] (-) TimerEvent: {}
+[4.946246] (-) TimerEvent: {}
+[4.969073] (sensors) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable realsense_camera_node\x1b[0m\n'}
+[5.047332] (-) TimerEvent: {}
+[5.138924] (sensors) StdoutLine: {'line': b'[ 75%] Built target realsense_camera_node\n'}
+[5.140820] (sensors) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.144022] (sensors) CommandEnded: {'returncode': 2}
+[5.148632] (-) TimerEvent: {}
+[5.162822] (sensors) JobEnded: {'identifier': 'sensors', 'rc': 2}
+[5.174385] (-) EventReactorShutdown: {}

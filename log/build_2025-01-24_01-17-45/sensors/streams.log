@@ -1,0 +1,31 @@
+[0.026s] Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+[0.072s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.359s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.417s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.423s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.436s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.454s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.477s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.536s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.538s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.809s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.903s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.037s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.037s] -- Configured cppcheck include dirs: 
+[1.037s] -- Configured cppcheck exclude dirs and/or files: 
+[1.038s] -- Added test 'lint_cmake' to check CMake code style
+[1.041s] -- Added test 'uncrustify' to check C / C++ code style
+[1.041s] -- Configured uncrustify additional arguments: 
+[1.041s] -- Added test 'xmllint' to check XML markup files
+[1.043s] -- Configuring done
+[1.054s] -- Generating done
+[1.061s] -- Build files have been written to: /home/ubuntu/roboracing-f1tenth/build/sensors
+[1.130s] [ 50%] [32mBuilding CXX object CMakeFiles/sensors_component.dir/src/realsense_camera_publisher.cpp.o[0m
+[1.142s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.h: No such file or directory
+[1.142s]     1 | #include [01;31m[K<rclcpp/rclcpp.h>[m[K
+[1.143s]       |          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[1.143s] compilation terminated.
+[1.143s] gmake[2]: *** [CMakeFiles/sensors_component.dir/build.make:76: CMakeFiles/sensors_component.dir/src/realsense_camera_publisher.cpp.o] Error 1
+[1.144s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/sensors_component.dir/all] Error 2
+[1.145s] gmake: *** [Makefile:146: all] Error 2
+[1.149s] Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
