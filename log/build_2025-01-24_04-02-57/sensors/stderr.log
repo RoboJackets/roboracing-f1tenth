@@ -1,0 +1,16 @@
+[01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:7:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_DEBUG[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+    7 |     rclcpp::[01;31m[KRLCPP_DEBUG[m[K(node->get_logger(), "Debug");
+      |             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:8:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_INFO[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+    8 |     rclcpp::[01;31m[KRLCPP_INFO[m[K(node->get_logger(), "Info");
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:9:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_WARN[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+    9 |     rclcpp::[01;31m[KRLCPP_WARN[m[K(node->get_logger(), "Warning");
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:10:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_ERROR[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+   10 |     rclcpp::[01;31m[KRLCPP_ERROR[m[K(node->get_logger(), "Error");
+      |             [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/realsense_camera_node.dir/build.make:76: CMakeFiles/realsense_camera_node.dir/src/realsense_camera_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/realsense_camera_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

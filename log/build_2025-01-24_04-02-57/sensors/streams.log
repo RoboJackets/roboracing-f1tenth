@@ -1,0 +1,20 @@
+[0.020s] Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+[0.082s] [35m[1mConsolidate compiler generated dependencies of target realsense_camera_node[0m
+[0.107s] [ 50%] [32mBuilding CXX object CMakeFiles/realsense_camera_node.dir/src/realsense_camera_node.cpp.o[0m
+[2.984s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[2.984s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:7:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_DEBUG[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+[2.984s]     7 |     rclcpp::[01;31m[KRLCPP_DEBUG[m[K(node->get_logger(), "Debug");
+[2.984s]       |             [01;31m[K^~~~~~~~~~~[m[K
+[2.985s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:8:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_INFO[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+[2.985s]     8 |     rclcpp::[01;31m[KRLCPP_INFO[m[K(node->get_logger(), "Info");
+[2.985s]       |             [01;31m[K^~~~~~~~~~[m[K
+[2.986s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:9:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_WARN[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+[2.986s]     9 |     rclcpp::[01;31m[KRLCPP_WARN[m[K(node->get_logger(), "Warning");
+[2.987s]       |             [01;31m[K^~~~~~~~~~[m[K
+[2.988s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:10:13:[m[K [01;31m[Kerror: [m[K‘[01m[KRLCPP_ERROR[m[K’ is not a member of ‘[01m[Krclcpp[m[K’
+[2.988s]    10 |     rclcpp::[01;31m[KRLCPP_ERROR[m[K(node->get_logger(), "Error");
+[2.988s]       |             [01;31m[K^~~~~~~~~~~[m[K
+[3.517s] gmake[2]: *** [CMakeFiles/realsense_camera_node.dir/build.make:76: CMakeFiles/realsense_camera_node.dir/src/realsense_camera_node.cpp.o] Error 1
+[3.517s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/realsense_camera_node.dir/all] Error 2
+[3.517s] gmake: *** [Makefile:146: all] Error 2
+[3.522s] Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8

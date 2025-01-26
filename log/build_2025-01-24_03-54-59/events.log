@@ -1,0 +1,107 @@
+[0.000000] (-) TimerEvent: {}
+[0.000419] (sensors) JobQueued: {'identifier': 'sensors', 'dependencies': OrderedDict()}
+[0.000599] (sensors) JobStarted: {'identifier': 'sensors'}
+[0.012819] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'cmake'}
+[0.014066] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'build'}
+[0.016362] (sensors) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/roboracing-f1tenth/build/sensors', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/roboracing-f1tenth/build/sensors', 'env': OrderedDict([('VNCDESKTOP', 'bbb7d4524d2d:1 (ubuntu)'), ('QT_SCALE_FACTOR', '1'), ('USER', 'ubuntu'), ('SUPERVISOR_GROUP_NAME', 'vnc'), ('HOSTNAME', 'bbb7d4524d2d'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/codium/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('CHROME_DESKTOP', 'codium.desktop'), ('TERM_PROGRAM_VERSION', '1.96.3'), ('GIO_LAUNCHED_DESKTOP_FILE', '/home/ubuntu/Desktop/codium.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/codium/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/codium/codium'), ('LC_CTYPE', 'C.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:abstract=/tmp/dbus-d8nUoaLbJM,guid=aa1b85f45e2138a7ac0f4c4b67930949'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '577'), ('GNOME_KEYRING_CONTROL', '/home/ubuntu/.cache/keyring-8KGS02'), ('UBUNTU_MENUPROXY', '1'), ('COLCON_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GTK_OVERLAY_SCROLLING', '0'), ('ROS_LOCALHOST_ONLY', '0'), ('INSIDE_CAJA_PYTHON', ''), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bbb7d4524d2d:@/tmp/.ICE-unix/68,unix/bbb7d4524d2d:/tmp/.ICE-unix/68'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'MATE'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-6bd464112c.sock'), ('SUPERVISOR_ENABLED', '1'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/home/ubuntu/.cache/keyring-8KGS02/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'MATE'), ('NO_AT_BRIDGE', '1'), ('PASSWD', 'ubuntu'), ('SUPERVISOR_SERVER_URL', 'unix:///var/run/supervisor.sock'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('SUPERVISOR_PROCESS_NAME', 'vnc'), ('PWD', '/home/ubuntu/roboracing-f1tenth/build/sensors'), ('XDG_DATA_DIRS', '/usr/share/gnome:/home/ubuntu/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MATE_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('QT_FONT_DPI', '96')]), 'shell': False}
+[0.049121] (sensors) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.098642] (-) TimerEvent: {}
+[0.199550] (-) TimerEvent: {}
+[0.239624] (sensors) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.294477] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.298065] (sensors) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.300552] (-) TimerEvent: {}
+[0.306452] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.319468] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.336232] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.384927] (sensors) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.386392] (sensors) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.401457] (-) TimerEvent: {}
+[0.502445] (-) TimerEvent: {}
+[0.572165] (sensors) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.603364] (-) TimerEvent: {}
+[0.634513] (sensors) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.704375] (-) TimerEvent: {}
+[0.725144] (sensors) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.725395] (sensors) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.725458] (sensors) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.726024] (sensors) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.727092] (sensors) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.727302] (sensors) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.727744] (sensors) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.728545] (sensors) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.743026] (sensors) StdoutLine: {'line': b'-- Generating done\n'}
+[0.747208] (sensors) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/roboracing-f1tenth/build/sensors\n'}
+[0.798970] (sensors) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/realsense_camera_node.dir/src/realsense_camera_node.cpp.o\x1b[0m\n'}
+[0.805541] (-) TimerEvent: {}
+[0.906450] (-) TimerEvent: {}
+[1.007445] (-) TimerEvent: {}
+[1.108437] (-) TimerEvent: {}
+[1.209574] (-) TimerEvent: {}
+[1.310556] (-) TimerEvent: {}
+[1.411593] (-) TimerEvent: {}
+[1.512422] (-) TimerEvent: {}
+[1.613632] (-) TimerEvent: {}
+[1.715392] (-) TimerEvent: {}
+[1.816524] (-) TimerEvent: {}
+[1.917467] (-) TimerEvent: {}
+[2.018470] (-) TimerEvent: {}
+[2.119409] (-) TimerEvent: {}
+[2.220414] (-) TimerEvent: {}
+[2.321542] (-) TimerEvent: {}
+[2.422480] (-) TimerEvent: {}
+[2.523684] (-) TimerEvent: {}
+[2.625512] (-) TimerEvent: {}
+[2.726504] (-) TimerEvent: {}
+[2.827636] (-) TimerEvent: {}
+[2.928359] (-) TimerEvent: {}
+[3.029525] (-) TimerEvent: {}
+[3.130361] (-) TimerEvent: {}
+[3.231464] (-) TimerEvent: {}
+[3.332580] (-) TimerEvent: {}
+[3.433543] (-) TimerEvent: {}
+[3.534528] (-) TimerEvent: {}
+[3.635448] (-) TimerEvent: {}
+[3.736473] (-) TimerEvent: {}
+[3.837456] (-) TimerEvent: {}
+[3.887646] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.887884] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:3:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kargc\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.887982] (sensors) StderrLine: {'line': b'    3 | int main(\x1b[01;35m\x1b[Kint argc\x1b[m\x1b[K, char** argv)\n'}
+[3.888038] (sensors) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K~~~~^~~~\x1b[m\x1b[K\n'}
+[3.888090] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp:3:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kargv\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.888151] (sensors) StderrLine: {'line': b'    3 | int main(int argc, \x1b[01;35m\x1b[Kchar** argv\x1b[m\x1b[K)\n'}
+[3.888200] (sensors) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[3.938554] (-) TimerEvent: {}
+[4.039588] (-) TimerEvent: {}
+[4.140580] (-) TimerEvent: {}
+[4.241449] (-) TimerEvent: {}
+[4.342377] (-) TimerEvent: {}
+[4.443463] (-) TimerEvent: {}
+[4.456912] (sensors) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable realsense_camera_node\x1b[0m\n'}
+[4.544690] (-) TimerEvent: {}
+[4.589888] (sensors) StdoutLine: {'line': b'[100%] Built target realsense_camera_node\n'}
+[4.605322] (sensors) CommandEnded: {'returncode': 0}
+[4.606939] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'install'}
+[4.619658] (sensors) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu/roboracing-f1tenth/build/sensors'], 'cwd': '/home/ubuntu/roboracing-f1tenth/build/sensors', 'env': OrderedDict([('VNCDESKTOP', 'bbb7d4524d2d:1 (ubuntu)'), ('QT_SCALE_FACTOR', '1'), ('USER', 'ubuntu'), ('SUPERVISOR_GROUP_NAME', 'vnc'), ('HOSTNAME', 'bbb7d4524d2d'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/codium/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('CHROME_DESKTOP', 'codium.desktop'), ('TERM_PROGRAM_VERSION', '1.96.3'), ('GIO_LAUNCHED_DESKTOP_FILE', '/home/ubuntu/Desktop/codium.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/codium/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/codium/codium'), ('LC_CTYPE', 'C.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:abstract=/tmp/dbus-d8nUoaLbJM,guid=aa1b85f45e2138a7ac0f4c4b67930949'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '577'), ('GNOME_KEYRING_CONTROL', '/home/ubuntu/.cache/keyring-8KGS02'), ('UBUNTU_MENUPROXY', '1'), ('COLCON_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GTK_OVERLAY_SCROLLING', '0'), ('ROS_LOCALHOST_ONLY', '0'), ('INSIDE_CAJA_PYTHON', ''), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bbb7d4524d2d:@/tmp/.ICE-unix/68,unix/bbb7d4524d2d:/tmp/.ICE-unix/68'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'MATE'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-6bd464112c.sock'), ('SUPERVISOR_ENABLED', '1'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/home/ubuntu/.cache/keyring-8KGS02/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'MATE'), ('NO_AT_BRIDGE', '1'), ('PASSWD', 'ubuntu'), ('SUPERVISOR_SERVER_URL', 'unix:///var/run/supervisor.sock'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('SUPERVISOR_PROCESS_NAME', 'vnc'), ('PWD', '/home/ubuntu/roboracing-f1tenth/build/sensors'), ('XDG_DATA_DIRS', '/usr/share/gnome:/home/ubuntu/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MATE_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('QT_FONT_DPI', '96')]), 'shell': False}
+[4.628076] (sensors) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.628440] (sensors) StdoutLine: {'line': b'-- Installing: /home/ubuntu/roboracing-f1tenth/install/sensors/lib/sensors/realsense_camera_node\n'}
+[4.628937] (sensors) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/roboracing-f1tenth/install/sensors/lib/sensors/realsense_camera_node" to ""\n'}
+[4.629438] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/ament_index/resource_index/package_run_dependencies/sensors\n'}
+[4.629534] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/ament_index/resource_index/parent_prefix_path/sensors\n'}
+[4.629592] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/ament_prefix_path.sh\n'}
+[4.629662] (sensors) StdoutLine: {'line': b'-- Installing: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/ament_prefix_path.dsv\n'}
+[4.630051] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/path.sh\n'}
+[4.630640] (sensors) StdoutLine: {'line': b'-- Installing: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/environment/path.dsv\n'}
+[4.631066] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.bash\n'}
+[4.631555] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.sh\n'}
+[4.631853] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.zsh\n'}
+[4.631968] (sensors) StdoutLine: {'line': b'-- Installing: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/local_setup.dsv\n'}
+[4.632078] (sensors) StdoutLine: {'line': b'-- Installing: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/package.dsv\n'}
+[4.632319] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/ament_index/resource_index/packages/sensors\n'}
+[4.632410] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/cmake/sensorsConfig.cmake\n'}
+[4.632473] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/cmake/sensorsConfig-version.cmake\n'}
+[4.632523] (sensors) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/roboracing-f1tenth/install/sensors/share/sensors/package.xml\n'}
+[4.634658] (sensors) CommandEnded: {'returncode': 0}
+[4.645524] (-) TimerEvent: {}
+[4.659227] (sensors) JobEnded: {'identifier': 'sensors', 'rc': 0}
+[4.660946] (-) EventReactorShutdown: {}

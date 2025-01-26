@@ -1,0 +1,47 @@
+[0.020s] Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+[0.051s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.221s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.264s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.268s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.277s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.289s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.305s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.347s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.349s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.531s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.594s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.698s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.698s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/ubuntu/roboracing-f1tenth/sensors/include>
+[0.698s] -- Configured cppcheck exclude dirs and/or files: 
+[0.698s] -- Added test 'lint_cmake' to check CMake code style
+[0.700s] -- Added test 'uncrustify' to check C / C++ code style
+[0.700s] -- Configured uncrustify additional arguments: 
+[0.700s] -- Added test 'xmllint' to check XML markup files
+[0.701s] -- Configuring done
+[0.721s] -- Generating done
+[0.727s] -- Build files have been written to: /home/ubuntu/roboracing-f1tenth/build/sensors
+[0.774s] [ 50%] [32mBuilding CXX object CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o[0m
+[0.774s] [ 50%] [32mBuilding CXX object CMakeFiles/talker.dir/src/realsense_camera_publisher.cpp.o[0m
+[0.836s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:6:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: No such file or directory
+[0.837s]     6 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+[0.837s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.837s] compilation terminated.
+[0.838s] gmake[2]: *** [CMakeFiles/realsense_camera_publisher.dir/build.make:76: CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o] Error 1
+[0.838s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/realsense_camera_publisher.dir/all] Error 2
+[0.838s] gmake[1]: *** Waiting for unfinished jobs....
+[4.618s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:16:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+[4.618s]    16 | }
+[4.618s]       |  [01;31m[K^[m[K
+[4.619s]       |  [32m[K;[m[K
+[4.619s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:[m[K In constructor ‘[01m[KRealsenseCameraPublisher::RealsenseCameraPublisher()[m[K’:
+[4.619s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:12:41:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KRealsenseCameraPublisher[m[K’ does not have any field named ‘[01m[Kcount_[m[K’
+[4.619s]    12 |   : Node("realsense_camera_publisher"), [01;31m[Kcount_[m[K(0)
+[4.619s]       |                                         [01;31m[K^~~~~~[m[K
+[4.627s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_publisher_t[m[K’?
+[4.627s]    14 |     [01;31m[Kpublisher_[m[K = this->create_publisher<std_msgs::msg::String>("topic", 10);
+[4.627s]       |     [01;31m[K^~~~~~~~~~[m[K
+[4.627s]       |     [32m[Krmw_publisher_t[m[K
+[5.831s] gmake[2]: *** [CMakeFiles/talker.dir/build.make:76: CMakeFiles/talker.dir/src/realsense_camera_publisher.cpp.o] Error 1
+[5.831s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/talker.dir/all] Error 2
+[5.831s] gmake: *** [Makefile:146: all] Error 2
+[5.835s] Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8

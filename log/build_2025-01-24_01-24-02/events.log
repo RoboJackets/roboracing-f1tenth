@@ -1,0 +1,47 @@
+[0.000000] (-) TimerEvent: {}
+[0.000355] (sensors) JobQueued: {'identifier': 'sensors', 'dependencies': OrderedDict()}
+[0.000460] (sensors) JobStarted: {'identifier': 'sensors'}
+[0.017869] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'cmake'}
+[0.019264] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'build'}
+[0.023006] (sensors) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/roboracing-f1tenth/build/sensors', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/roboracing-f1tenth/build/sensors', 'env': OrderedDict([('VNCDESKTOP', 'bbb7d4524d2d:1 (ubuntu)'), ('QT_SCALE_FACTOR', '1'), ('USER', 'ubuntu'), ('SUPERVISOR_GROUP_NAME', 'vnc'), ('HOSTNAME', 'bbb7d4524d2d'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/codium/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('CHROME_DESKTOP', 'codium.desktop'), ('TERM_PROGRAM_VERSION', '1.96.3'), ('GIO_LAUNCHED_DESKTOP_FILE', '/home/ubuntu/Desktop/codium.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/codium/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/codium/codium'), ('LC_CTYPE', 'C.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:abstract=/tmp/dbus-0BmBIteAei,guid=e50410367178d2d83382038b6792e6f0'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '549'), ('GNOME_KEYRING_CONTROL', '/home/ubuntu/.cache/keyring-X4KC12'), ('UBUNTU_MENUPROXY', '1'), ('COLCON_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GTK_OVERLAY_SCROLLING', '0'), ('ROS_LOCALHOST_ONLY', '0'), ('INSIDE_CAJA_PYTHON', ''), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bbb7d4524d2d:@/tmp/.ICE-unix/68,unix/bbb7d4524d2d:/tmp/.ICE-unix/68'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'MATE'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-6bd464112c.sock'), ('SUPERVISOR_ENABLED', '1'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/home/ubuntu/.cache/keyring-X4KC12/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'MATE'), ('NO_AT_BRIDGE', '1'), ('PASSWD', 'ubuntu'), ('SUPERVISOR_SERVER_URL', 'unix:///var/run/supervisor.sock'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('SUPERVISOR_PROCESS_NAME', 'vnc'), ('PWD', '/home/ubuntu/roboracing-f1tenth/build/sensors'), ('XDG_DATA_DIRS', '/usr/share/gnome:/home/ubuntu/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MATE_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/roboracing-f1tenth/install/sensors:/opt/ros/humble'), ('QT_FONT_DPI', '96')]), 'shell': False}
+[0.062938] (sensors) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.098721] (-) TimerEvent: {}
+[0.199879] (-) TimerEvent: {}
+[0.279842] (sensors) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.300814] (-) TimerEvent: {}
+[0.336954] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.343391] (sensors) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.354318] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.369316] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.388312] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.401826] (-) TimerEvent: {}
+[0.436461] (sensors) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.438660] (sensors) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.502662] (-) TimerEvent: {}
+[0.603875] (-) TimerEvent: {}
+[0.661956] (sensors) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.704627] (-) TimerEvent: {}
+[0.735944] (sensors) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.805829] (-) TimerEvent: {}
+[0.842512] (sensors) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.842914] (sensors) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.843024] (sensors) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.843790] (sensors) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.845268] (sensors) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.845490] (sensors) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.845647] (sensors) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.846944] (sensors) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.858096] (sensors) StdoutLine: {'line': b'-- Generating done\n'}
+[0.862373] (sensors) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/roboracing-f1tenth/build/sensors\n'}
+[0.906857] (-) TimerEvent: {}
+[0.919903] (sensors) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sensors.dir/src/realsense_camera_publisher.cpp.o\x1b[0m\n'}
+[0.932550] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:1:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Krclcpp/rclcpp.h: No such file or directory\n'}
+[0.932848] (sensors) StderrLine: {'line': b'    1 | #include \x1b[01;31m\x1b[K<rclcpp/rclcpp.h>\x1b[m\x1b[K\n'}
+[0.932934] (sensors) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.933006] (sensors) StderrLine: {'line': b'compilation terminated.\n'}
+[0.933811] (sensors) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/sensors.dir/build.make:76: CMakeFiles/sensors.dir/src/realsense_camera_publisher.cpp.o] Error 1\n'}
+[0.934768] (sensors) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/sensors.dir/all] Error 2\n'}
+[0.934949] (sensors) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[0.937675] (sensors) CommandEnded: {'returncode': 2}
+[0.957075] (sensors) JobEnded: {'identifier': 'sensors', 'rc': 2}
+[0.968902] (-) EventReactorShutdown: {}

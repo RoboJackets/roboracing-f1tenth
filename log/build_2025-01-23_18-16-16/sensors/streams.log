@@ -1,0 +1,38 @@
+[0.017s] Invoking command in '/home/ubuntu/roboracing-f1tenth/build/sensors': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8
+[0.048s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.218s] -- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)
+[0.355s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.371s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.393s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.426s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.465s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.586s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.595s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.810s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.886s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.981s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.016s] -- Looking for pthread.h
+[1.133s] -- Looking for pthread.h - found
+[1.134s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.250s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.251s] -- Found Threads: TRUE  
+[1.380s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.484s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.484s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/ubuntu/roboracing-f1tenth/sensors/include>
+[1.484s] -- Configured cppcheck exclude dirs and/or files: 
+[1.484s] -- Added test 'lint_cmake' to check CMake code style
+[1.486s] -- Added test 'uncrustify' to check C / C++ code style
+[1.488s] -- Configured uncrustify additional arguments: 
+[1.489s] -- Added test 'xmllint' to check XML markup files
+[1.490s] -- Configuring done
+[1.501s] -- Generating done
+[1.511s] -- Build files have been written to: /home/ubuntu/roboracing-f1tenth/build/sensors
+[1.569s] [ 50%] [32mBuilding CXX object CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o[0m
+[1.632s] [01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:6:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: No such file or directory
+[1.633s]     6 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+[1.633s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.633s] compilation terminated.
+[1.634s] gmake[2]: *** [CMakeFiles/realsense_camera_publisher.dir/build.make:76: CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o] Error 1
+[1.634s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/realsense_camera_publisher.dir/all] Error 2
+[1.634s] gmake: *** [Makefile:146: all] Error 2
+[1.638s] Invoked command in '/home/ubuntu/roboracing-f1tenth/build/sensors' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/roboracing-f1tenth/build/sensors -- -j8 -l8

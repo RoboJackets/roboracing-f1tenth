@@ -1,0 +1,138 @@
+[0.000000] (-) TimerEvent: {}
+[0.000581] (sensors) JobQueued: {'identifier': 'sensors', 'dependencies': OrderedDict()}
+[0.001558] (sensors) JobStarted: {'identifier': 'sensors'}
+[0.042976] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'cmake'}
+[0.046706] (sensors) JobProgress: {'identifier': 'sensors', 'progress': 'build'}
+[0.049659] (sensors) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/roboracing-f1tenth/build/sensors', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu/roboracing-f1tenth/build/sensors', 'env': OrderedDict([('VNCDESKTOP', 'bbb7d4524d2d:1 (ubuntu)'), ('QT_SCALE_FACTOR', '1'), ('USER', 'ubuntu'), ('SUPERVISOR_GROUP_NAME', 'vnc'), ('HOSTNAME', 'bbb7d4524d2d'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/codium/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('CHROME_DESKTOP', 'codium.desktop'), ('TERM_PROGRAM_VERSION', '1.96.3'), ('GIO_LAUNCHED_DESKTOP_FILE', '/home/ubuntu/Desktop/codium.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'appmenu-gtk-module'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/codium/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/codium/codium'), ('LC_CTYPE', 'C.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:abstract=/tmp/dbus-0BmBIteAei,guid=e50410367178d2d83382038b6792e6f0'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '549'), ('GNOME_KEYRING_CONTROL', '/home/ubuntu/.cache/keyring-X4KC12'), ('UBUNTU_MENUPROXY', '1'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GTK_OVERLAY_SCROLLING', '0'), ('ROS_LOCALHOST_ONLY', '0'), ('INSIDE_CAJA_PYTHON', ''), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bbb7d4524d2d:@/tmp/.ICE-unix/68,unix/bbb7d4524d2d:/tmp/.ICE-unix/68'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'MATE'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-6bd464112c.sock'), ('SUPERVISOR_ENABLED', '1'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/home/ubuntu/.cache/keyring-X4KC12/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'MATE'), ('NO_AT_BRIDGE', '1'), ('PASSWD', 'ubuntu'), ('SUPERVISOR_SERVER_URL', 'unix:///var/run/supervisor.sock'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('SUPERVISOR_PROCESS_NAME', 'vnc'), ('PWD', '/home/ubuntu/roboracing-f1tenth/build/sensors'), ('XDG_DATA_DIRS', '/usr/share/gnome:/home/ubuntu/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MATE_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('COLCON', '1'), ('QT_FONT_DPI', '96'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098380] (-) TimerEvent: {}
+[0.199279] (-) TimerEvent: {}
+[0.300761] (-) TimerEvent: {}
+[0.335239] (sensors) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.401431] (-) TimerEvent: {}
+[0.502343] (-) TimerEvent: {}
+[0.603436] (-) TimerEvent: {}
+[0.704722] (-) TimerEvent: {}
+[0.806307] (-) TimerEvent: {}
+[0.869996] (sensors) StdoutLine: {'line': b'-- Found rclcpp: 16.0.11 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.907525] (-) TimerEvent: {}
+[1.008476] (-) TimerEvent: {}
+[1.054445] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.067905] (sensors) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.096306] (sensors) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.109385] (-) TimerEvent: {}
+[1.133907] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.185472] (sensors) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.210445] (-) TimerEvent: {}
+[1.311385] (-) TimerEvent: {}
+[1.333253] (sensors) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.345812] (sensors) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.412319] (-) TimerEvent: {}
+[1.513605] (-) TimerEvent: {}
+[1.615549] (-) TimerEvent: {}
+[1.716337] (-) TimerEvent: {}
+[1.817339] (-) TimerEvent: {}
+[1.818717] (sensors) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.918324] (-) TimerEvent: {}
+[2.019329] (-) TimerEvent: {}
+[2.068023] (sensors) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.120488] (-) TimerEvent: {}
+[2.222340] (-) TimerEvent: {}
+[2.255399] (sensors) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.255782] (sensors) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/ubuntu/roboracing-f1tenth/sensors/include>\n'}
+[2.255967] (sensors) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.257632] (sensors) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.259723] (sensors) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.260072] (sensors) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.261446] (sensors) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.267036] (sensors) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.317412] (sensors) StdoutLine: {'line': b'-- Generating done\n'}
+[2.323391] (-) TimerEvent: {}
+[2.328193] (sensors) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/roboracing-f1tenth/build/sensors\n'}
+[2.387646] (sensors) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target realsense_camera_publisher\x1b[0m\n'}
+[2.389193] (sensors) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target talker\x1b[0m\n'}
+[2.424520] (-) TimerEvent: {}
+[2.431634] (sensors) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o\x1b[0m\n'}
+[2.521413] (sensors) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/talker.dir/src/realsense_camera_publisher.cpp.o\x1b[0m\n'}
+[2.525633] (-) TimerEvent: {}
+[2.626279] (-) TimerEvent: {}
+[2.727450] (-) TimerEvent: {}
+[2.738358] (sensors) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:6:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Krclcpp/rclcpp.hpp: No such file or directory\n'}
+[2.738743] (sensors) StderrLine: {'line': b'    6 | #include \x1b[01;31m\x1b[K<rclcpp/rclcpp.hpp>\x1b[m\x1b[K\n'}
+[2.738902] (sensors) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.739175] (sensors) StderrLine: {'line': b'compilation terminated.\n'}
+[2.740262] (sensors) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/realsense_camera_publisher.dir/build.make:76: CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o] Error 1\n'}
+[2.740886] (sensors) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/realsense_camera_publisher.dir/all] Error 2\n'}
+[2.741143] (sensors) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[2.828430] (-) TimerEvent: {}
+[2.929272] (-) TimerEvent: {}
+[3.030323] (-) TimerEvent: {}
+[3.131792] (-) TimerEvent: {}
+[3.233518] (-) TimerEvent: {}
+[3.335332] (-) TimerEvent: {}
+[3.436597] (-) TimerEvent: {}
+[3.538307] (-) TimerEvent: {}
+[3.639335] (-) TimerEvent: {}
+[3.740653] (-) TimerEvent: {}
+[3.842279] (-) TimerEvent: {}
+[3.943576] (-) TimerEvent: {}
+[4.044359] (-) TimerEvent: {}
+[4.145488] (-) TimerEvent: {}
+[4.246530] (-) TimerEvent: {}
+[4.347439] (-) TimerEvent: {}
+[4.448555] (-) TimerEvent: {}
+[4.550359] (-) TimerEvent: {}
+[4.651449] (-) TimerEvent: {}
+[4.752461] (-) TimerEvent: {}
+[4.853389] (-) TimerEvent: {}
+[4.954421] (-) TimerEvent: {}
+[5.055751] (-) TimerEvent: {}
+[5.157508] (-) TimerEvent: {}
+[5.258529] (-) TimerEvent: {}
+[5.359463] (-) TimerEvent: {}
+[5.460410] (-) TimerEvent: {}
+[5.561285] (-) TimerEvent: {}
+[5.662508] (-) TimerEvent: {}
+[5.763358] (-) TimerEvent: {}
+[5.864611] (-) TimerEvent: {}
+[5.966286] (-) TimerEvent: {}
+[6.067382] (-) TimerEvent: {}
+[6.168538] (-) TimerEvent: {}
+[6.269461] (-) TimerEvent: {}
+[6.370386] (-) TimerEvent: {}
+[6.471483] (-) TimerEvent: {}
+[6.572493] (-) TimerEvent: {}
+[6.673337] (-) TimerEvent: {}
+[6.774555] (-) TimerEvent: {}
+[6.875459] (-) TimerEvent: {}
+[6.976469] (-) TimerEvent: {}
+[7.077497] (-) TimerEvent: {}
+[7.178465] (-) TimerEvent: {}
+[7.279512] (-) TimerEvent: {}
+[7.380564] (-) TimerEvent: {}
+[7.481481] (-) TimerEvent: {}
+[7.582471] (-) TimerEvent: {}
+[7.683441] (-) TimerEvent: {}
+[7.784509] (-) TimerEvent: {}
+[7.886549] (-) TimerEvent: {}
+[7.987460] (-) TimerEvent: {}
+[8.088328] (-) TimerEvent: {}
+[8.189549] (-) TimerEvent: {}
+[8.291415] (-) TimerEvent: {}
+[8.392349] (-) TimerEvent: {}
+[8.493459] (-) TimerEvent: {}
+[8.594466] (-) TimerEvent: {}
+[8.695500] (-) TimerEvent: {}
+[8.796396] (-) TimerEvent: {}
+[8.898440] (-) TimerEvent: {}
+[8.999419] (-) TimerEvent: {}
+[9.063650] (sensors) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable talker\x1b[0m\n'}
+[9.100576] (-) TimerEvent: {}
+[9.202574] (-) TimerEvent: {}
+[9.303360] (-) TimerEvent: {}
+[9.405303] (-) TimerEvent: {}
+[9.478955] (sensors) StdoutLine: {'line': b'[ 75%] Built target talker\n'}
+[9.481546] (sensors) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[9.485765] (sensors) CommandEnded: {'returncode': 2}
+[9.506222] (-) TimerEvent: {}
+[9.541979] (sensors) JobEnded: {'identifier': 'sensors', 'rc': 2}
+[9.554252] (-) EventReactorShutdown: {}

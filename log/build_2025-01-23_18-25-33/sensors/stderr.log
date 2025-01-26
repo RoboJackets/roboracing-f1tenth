@@ -1,0 +1,7 @@
+[01m[K/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_publisher.cpp:6:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: No such file or directory
+    6 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/realsense_camera_publisher.dir/build.make:76: CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/realsense_camera_publisher.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
