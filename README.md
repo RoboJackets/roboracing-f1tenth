@@ -24,7 +24,7 @@ Electronic:
 
 ## 2025 Notes:
 ### Current Simulation Installation Instructions
-Link to F1tenth simulation: https://github.com/RoboJackets/roboracing-f1tenth
+Link to F1tenth simulation: https://github.com/f1tenth/f1tenth_gym_ros
 1. First go down to the section "Without an NVIDIA gpu" if you are on MacOS or Windows without an   NVIDIA gpu.
 2. Follow instructions as in the read me (make sure to clone f1tenth_gym_ros)
 3. When running the setup scripts make sure to run them in a separate terminal in the "Launching the Simulation section" 
