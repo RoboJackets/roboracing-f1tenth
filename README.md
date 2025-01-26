@@ -1,26 +1,26 @@
 # Welcome to RoboRacing's 2025 F1tenth Season
 
 ## Team Members: 
-- Eshan: Project Manager
-- Andrew: Software Lead
-- Zane: Mechatronic Lead
+- Eshan Jaffar: Project Manager
+- Andrew Son: Software Lead
+- Zane Pressley: Mechatronic Lead
 
 Software Team: 
-- Sasanka
-- Justin
-- Cipriano
-- Daniel
-- Rohan
-- Nathan
-- Eshan
-- Andrew 
+- Sasanka Polisetti
+- Justin Gardiner
+- Cipriano Dorbessan
+- Daniel Thompson
+- Rohan Nair
+- Nathan Donagi
+- Eshan Jaffar
+- Andrew Son
 
 Mechanical Team: 
-- Ian
+- Ian Causseaux
 
 Electronic: 
-- Jacky
-- Zane
+- Jackie Mac Hale
+- Zane Pressley
 
 ## 2025 Notes:
 ### Current Simulation Installation Instructions
