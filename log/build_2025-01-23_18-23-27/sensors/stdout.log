@@ -1,4 +1,0 @@
-[ 25%] [32mBuilding CXX object CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/talker.dir/src/realsense_camera_publisher.cpp.o[0m
-[ 75%] [32m[1mLinking CXX executable talker[0m
-[ 75%] Built target talker

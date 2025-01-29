@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o"
+  "CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o.d"
   "CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o"
   "CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o.d"
   "libsensors.pdb"

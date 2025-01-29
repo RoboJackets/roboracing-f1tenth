@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp" "CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o" "gcc" "CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o.d"
+  "/home/roboracing/roboracing-f1tenth/sensors/src/basic_depth_detection.cpp" "CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o" "gcc" "CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o.d"
+  "/home/roboracing/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp" "CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o" "gcc" "CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o.d"
   )
 
 # Targets to which this target links.

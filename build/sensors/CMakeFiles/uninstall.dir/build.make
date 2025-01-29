@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/roboracing-f1tenth/sensors
+CMAKE_SOURCE_DIR = /home/roboracing/roboracing-f1tenth/sensors
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/roboracing-f1tenth/build/sensors
+CMAKE_BINARY_DIR = /home/roboracing/roboracing-f1tenth/build/sensors
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/ubuntu/roboracing-f1tenth/build/sensors && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/roboracing-f1tenth/sensors /home/ubuntu/roboracing-f1tenth/sensors /home/ubuntu/roboracing-f1tenth/build/sensors /home/ubuntu/roboracing-f1tenth/build/sensors /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/roboracing/roboracing-f1tenth/build/sensors && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roboracing/roboracing-f1tenth/sensors /home/roboracing/roboracing-f1tenth/sensors /home/roboracing/roboracing-f1tenth/build/sensors /home/roboracing/roboracing-f1tenth/build/sensors /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

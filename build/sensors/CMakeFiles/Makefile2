@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/roboracing-f1tenth/sensors
+CMAKE_SOURCE_DIR = /home/roboracing/roboracing-f1tenth/sensors
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/roboracing-f1tenth/build/sensors
+CMAKE_BINARY_DIR = /home/roboracing/roboracing-f1tenth/build/sensors
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/roboracing-f1tenth/build/sensors
 # The main recursive "all" target.
 all: CMakeFiles/sensors.dir/all
 all: CMakeFiles/realsense_camera_node.dir/all
+all: CMakeFiles/depth_node.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,6 +77,7 @@ clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/sensors_uninstall.dir/clean
 clean: CMakeFiles/sensors.dir/clean
 clean: CMakeFiles/realsense_camera_node.dir/clean
+clean: CMakeFiles/depth_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -85,14 +87,14 @@ clean: CMakeFiles/realsense_camera_node.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/sensors_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -111,14 +113,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/sensors_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sensors_uninstall.dir/build.make CMakeFiles/sensors_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sensors_uninstall.dir/build.make CMakeFiles/sensors_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num= "Built target sensors_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num= "Built target sensors_uninstall"
 .PHONY : CMakeFiles/sensors_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sensors_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sensors_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
 .PHONY : CMakeFiles/sensors_uninstall.dir/rule
 
 # Convenience name for target.
@@ -137,14 +139,14 @@ CMakeFiles/sensors_uninstall.dir/clean:
 CMakeFiles/sensors.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sensors.dir/build.make CMakeFiles/sensors.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sensors.dir/build.make CMakeFiles/sensors.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=3,4 "Built target sensors"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=5,6,7 "Built target sensors"
 .PHONY : CMakeFiles/sensors.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sensors.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sensors.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
 .PHONY : CMakeFiles/sensors.dir/rule
 
 # Convenience name for target.
@@ -163,14 +165,14 @@ CMakeFiles/sensors.dir/clean:
 CMakeFiles/realsense_camera_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/realsense_camera_node.dir/build.make CMakeFiles/realsense_camera_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/realsense_camera_node.dir/build.make CMakeFiles/realsense_camera_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=1,2 "Built target realsense_camera_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=3,4 "Built target realsense_camera_node"
 .PHONY : CMakeFiles/realsense_camera_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/realsense_camera_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/realsense_camera_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
 .PHONY : CMakeFiles/realsense_camera_node.dir/rule
 
 # Convenience name for target.
@@ -181,6 +183,32 @@ realsense_camera_node: CMakeFiles/realsense_camera_node.dir/rule
 CMakeFiles/realsense_camera_node.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/realsense_camera_node.dir/build.make CMakeFiles/realsense_camera_node.dir/clean
 .PHONY : CMakeFiles/realsense_camera_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/depth_node.dir
+
+# All Build rule for target.
+CMakeFiles/depth_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/depth_node.dir/build.make CMakeFiles/depth_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/depth_node.dir/build.make CMakeFiles/depth_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=1,2 "Built target depth_node"
+.PHONY : CMakeFiles/depth_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/depth_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/depth_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
+.PHONY : CMakeFiles/depth_node.dir/rule
+
+# Convenience name for target.
+depth_node: CMakeFiles/depth_node.dir/rule
+.PHONY : depth_node
+
+# clean rule for target.
+CMakeFiles/depth_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/depth_node.dir/build.make CMakeFiles/depth_node.dir/clean
+.PHONY : CMakeFiles/depth_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

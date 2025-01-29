@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,libsensors_component.so -o libsensors_component.so CMakeFiles/sensors_component.dir/src/realsense_camera_publisher.cpp.o 

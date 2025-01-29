@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/roboracing-f1tenth/sensors
+CMAKE_SOURCE_DIR = /home/roboracing/roboracing-f1tenth/sensors
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/roboracing-f1tenth/build/sensors
+CMAKE_BINARY_DIR = /home/roboracing/roboracing-f1tenth/build/sensors
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sensors.dir/depend.make
@@ -70,29 +70,50 @@ include CMakeFiles/sensors.dir/progress.make
 include CMakeFiles/sensors.dir/flags.make
 
 CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o: CMakeFiles/sensors.dir/flags.make
-CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o: /home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp
+CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o: /home/roboracing/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp
 CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o: CMakeFiles/sensors.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o -MF CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o.d -o CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o -c /home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o -MF CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o.d -o CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o -c /home/roboracing/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp
 
 CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp > CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roboracing/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp > CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.i
 
 CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp -o CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roboracing/roboracing-f1tenth/sensors/src/realsense_camera_node.cpp -o CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.s
+
+CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o: CMakeFiles/sensors.dir/flags.make
+CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o: /home/roboracing/roboracing-f1tenth/sensors/src/basic_depth_detection.cpp
+CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o: CMakeFiles/sensors.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o -MF CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o.d -o CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o -c /home/roboracing/roboracing-f1tenth/sensors/src/basic_depth_detection.cpp
+
+CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roboracing/roboracing-f1tenth/sensors/src/basic_depth_detection.cpp > CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.i
+
+CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roboracing/roboracing-f1tenth/sensors/src/basic_depth_detection.cpp -o CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.s
 
 # Object files for target sensors
 sensors_OBJECTS = \
-"CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o"
+"CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o" \
+"CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o"
 
 # External object files for target sensors
 sensors_EXTERNAL_OBJECTS =
 
 libsensors.so: CMakeFiles/sensors.dir/src/realsense_camera_node.cpp.o
+libsensors.so: CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o
 libsensors.so: CMakeFiles/sensors.dir/build.make
 libsensors.so: /opt/ros/humble/lib/libcomponent_manager.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_generator_py.so
 libsensors.so: /opt/ros/humble/lib/librclcpp.so
 libsensors.so: /opt/ros/humble/lib/liblibstatistics_collector.so
 libsensors.so: /opt/ros/humble/lib/librcl.so
@@ -120,45 +141,64 @@ libsensors.so: /opt/ros/humble/lib/libstatistics_msgs__rosidl_generator_c.so
 libsensors.so: /opt/ros/humble/lib/libtracetools.so
 libsensors.so: /opt/ros/humble/lib/libament_index_cpp.so
 libsensors.so: /opt/ros/humble/lib/libclass_loader.so
-libsensors.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0
+libsensors.so: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.1.0
 libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_fastrtps_c.so
 libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_fastrtps_c.so
-libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_c.so
-libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_c.so
 libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_introspection_c.so
 libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so
-libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so
 libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_fastrtps_cpp.so
 libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_fastrtps_cpp.so
-libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
-libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-libsensors.so: /opt/ros/humble/lib/librmw.so
-libsensors.so: /opt/ros/humble/lib/libfastcdr.so.1.0.24
 libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_introspection_cpp.so
 libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so
+libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_cpp.so
+libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_cpp.so
+libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_generator_py.so
+libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_py.so
+libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_c.so
+libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_c.so
+libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_generator_c.so
+libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_c.so
+libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_c.so
+libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
+libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
+libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
+libsensors.so: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+libsensors.so: /opt/ros/humble/lib/librmw.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
+libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
 libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
 libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_introspection_cpp.so
 libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_introspection_c.so
-libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_cpp.so
-libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_cpp.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_typesupport_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_generator_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_generator_py.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_typesupport_c.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_generator_c.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
+libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
+libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
+libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
+libsensors.so: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+libsensors.so: /home/roboracing/ros2_humble/install/sensor_msgs/lib/libsensor_msgs__rosidl_typesupport_cpp.so
+libsensors.so: /home/roboracing/ros2_humble/install/geometry_msgs/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
+libsensors.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
 libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
-libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_generator_py.so
-libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_py.so
-libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
-libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_c.so
-libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_c.so
-libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
-libsensors.so: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_generator_c.so
-libsensors.so: /opt/ros/humble/lib/librcl_interfaces__rosidl_generator_c.so
-libsensors.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
 libsensors.so: /opt/ros/humble/lib/librosidl_typesupport_c.so
 libsensors.so: /opt/ros/humble/lib/librcpputils.so
 libsensors.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libsensors.so: /opt/ros/humble/lib/librcutils.so
-libsensors.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 libsensors.so: CMakeFiles/sensors.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libsensors.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libsensors.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sensors.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +210,6 @@ CMakeFiles/sensors.dir/clean:
 .PHONY : CMakeFiles/sensors.dir/clean
 
 CMakeFiles/sensors.dir/depend:
-	cd /home/ubuntu/roboracing-f1tenth/build/sensors && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/roboracing-f1tenth/sensors /home/ubuntu/roboracing-f1tenth/sensors /home/ubuntu/roboracing-f1tenth/build/sensors /home/ubuntu/roboracing-f1tenth/build/sensors /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles/sensors.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/roboracing/roboracing-f1tenth/build/sensors && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roboracing/roboracing-f1tenth/sensors /home/roboracing/roboracing-f1tenth/sensors /home/roboracing/roboracing-f1tenth/build/sensors /home/roboracing/roboracing-f1tenth/build/sensors /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles/sensors.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/sensors.dir/depend
 

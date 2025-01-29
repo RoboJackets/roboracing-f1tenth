@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/roboracing-f1tenth/sensors
+CMAKE_SOURCE_DIR = /home/roboracing/roboracing-f1tenth/sensors
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/roboracing-f1tenth/build/sensors
+CMAKE_BINARY_DIR = /home/roboracing/roboracing-f1tenth/build/sensors
 
 # Include any dependencies generated for this target.
 include CMakeFiles/realsense_camera_node.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/realsense_camera_node.dir/flags.make
 CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o: CMakeFiles/realsense_camera_node.dir/flags.make
 CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o: rclcpp_components/node_main_realsense_camera_node.cpp
 CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o: CMakeFiles/realsense_camera_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o -MF CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o.d -o CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o -c /home/ubuntu/roboracing-f1tenth/build/sensors/rclcpp_components/node_main_realsense_camera_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o -MF CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o.d -o CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.o -c /home/roboracing/roboracing-f1tenth/build/sensors/rclcpp_components/node_main_realsense_camera_node.cpp
 
 CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/roboracing-f1tenth/build/sensors/rclcpp_components/node_main_realsense_camera_node.cpp > CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roboracing/roboracing-f1tenth/build/sensors/rclcpp_components/node_main_realsense_camera_node.cpp > CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.i
 
 CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/roboracing-f1tenth/build/sensors/rclcpp_components/node_main_realsense_camera_node.cpp -o CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roboracing/roboracing-f1tenth/build/sensors/rclcpp_components/node_main_realsense_camera_node.cpp -o CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.s
 
 # Object files for target realsense_camera_node
 realsense_camera_node_OBJECTS = \
@@ -119,7 +119,7 @@ realsense_camera_node: /opt/ros/humble/lib/libstatistics_msgs__rosidl_typesuppor
 realsense_camera_node: /opt/ros/humble/lib/libstatistics_msgs__rosidl_generator_c.so
 realsense_camera_node: /opt/ros/humble/lib/libtracetools.so
 realsense_camera_node: /opt/ros/humble/lib/libclass_loader.so
-realsense_camera_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0
+realsense_camera_node: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.1.0
 realsense_camera_node: /opt/ros/humble/lib/libament_index_cpp.so
 realsense_camera_node: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_fastrtps_c.so
 realsense_camera_node: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_fastrtps_c.so
@@ -156,9 +156,9 @@ realsense_camera_node: /opt/ros/humble/lib/librosidl_typesupport_c.so
 realsense_camera_node: /opt/ros/humble/lib/librcpputils.so
 realsense_camera_node: /opt/ros/humble/lib/librosidl_runtime_c.so
 realsense_camera_node: /opt/ros/humble/lib/librcutils.so
-realsense_camera_node: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+realsense_camera_node: /usr/lib/aarch64-linux-gnu/libpython3.10.so
 realsense_camera_node: CMakeFiles/realsense_camera_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable realsense_camera_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable realsense_camera_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/realsense_camera_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/realsense_camera_node.dir/clean:
 .PHONY : CMakeFiles/realsense_camera_node.dir/clean
 
 CMakeFiles/realsense_camera_node.dir/depend:
-	cd /home/ubuntu/roboracing-f1tenth/build/sensors && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/roboracing-f1tenth/sensors /home/ubuntu/roboracing-f1tenth/sensors /home/ubuntu/roboracing-f1tenth/build/sensors /home/ubuntu/roboracing-f1tenth/build/sensors /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles/realsense_camera_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/roboracing/roboracing-f1tenth/build/sensors && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/roboracing/roboracing-f1tenth/sensors /home/roboracing/roboracing-f1tenth/sensors /home/roboracing/roboracing-f1tenth/build/sensors /home/roboracing/roboracing-f1tenth/build/sensors /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles/realsense_camera_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/realsense_camera_node.dir/depend
 

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/realsense_camera_publisher.dir/src/realsense_camera_publisher.cpp.o -o realsense_camera_publisher 

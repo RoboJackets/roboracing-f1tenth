@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/roboracing-f1tenth/sensors
+CMAKE_SOURCE_DIR = /home/roboracing/roboracing-f1tenth/sensors
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/roboracing-f1tenth/build/sensors
+CMAKE_BINARY_DIR = /home/roboracing/roboracing-f1tenth/build/sensors
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles /home/ubuntu/roboracing-f1tenth/build/sensors//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles /home/roboracing/roboracing-f1tenth/build/sensors//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/roboracing-f1tenth/build/sensors/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roboracing/roboracing-f1tenth/build/sensors/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -223,6 +223,43 @@ realsense_camera_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/realsense_camera_node.dir/build.make CMakeFiles/realsense_camera_node.dir/build
 .PHONY : realsense_camera_node/fast
 
+#=============================================================================
+# Target rules for targets named depth_node
+
+# Build rule for target.
+depth_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 depth_node
+.PHONY : depth_node
+
+# fast build rule for target.
+depth_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/depth_node.dir/build.make CMakeFiles/depth_node.dir/build
+.PHONY : depth_node/fast
+
+rclcpp_components/node_main_depth_node.o: rclcpp_components/node_main_depth_node.cpp.o
+.PHONY : rclcpp_components/node_main_depth_node.o
+
+# target to build an object file
+rclcpp_components/node_main_depth_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/depth_node.dir/build.make CMakeFiles/depth_node.dir/rclcpp_components/node_main_depth_node.cpp.o
+.PHONY : rclcpp_components/node_main_depth_node.cpp.o
+
+rclcpp_components/node_main_depth_node.i: rclcpp_components/node_main_depth_node.cpp.i
+.PHONY : rclcpp_components/node_main_depth_node.i
+
+# target to preprocess a source file
+rclcpp_components/node_main_depth_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/depth_node.dir/build.make CMakeFiles/depth_node.dir/rclcpp_components/node_main_depth_node.cpp.i
+.PHONY : rclcpp_components/node_main_depth_node.cpp.i
+
+rclcpp_components/node_main_depth_node.s: rclcpp_components/node_main_depth_node.cpp.s
+.PHONY : rclcpp_components/node_main_depth_node.s
+
+# target to generate assembly for a file
+rclcpp_components/node_main_depth_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/depth_node.dir/build.make CMakeFiles/depth_node.dir/rclcpp_components/node_main_depth_node.cpp.s
+.PHONY : rclcpp_components/node_main_depth_node.cpp.s
+
 rclcpp_components/node_main_realsense_camera_node.o: rclcpp_components/node_main_realsense_camera_node.cpp.o
 .PHONY : rclcpp_components/node_main_realsense_camera_node.o
 
@@ -246,6 +283,30 @@ rclcpp_components/node_main_realsense_camera_node.s: rclcpp_components/node_main
 rclcpp_components/node_main_realsense_camera_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/realsense_camera_node.dir/build.make CMakeFiles/realsense_camera_node.dir/rclcpp_components/node_main_realsense_camera_node.cpp.s
 .PHONY : rclcpp_components/node_main_realsense_camera_node.cpp.s
+
+src/basic_depth_detection.o: src/basic_depth_detection.cpp.o
+.PHONY : src/basic_depth_detection.o
+
+# target to build an object file
+src/basic_depth_detection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sensors.dir/build.make CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.o
+.PHONY : src/basic_depth_detection.cpp.o
+
+src/basic_depth_detection.i: src/basic_depth_detection.cpp.i
+.PHONY : src/basic_depth_detection.i
+
+# target to preprocess a source file
+src/basic_depth_detection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sensors.dir/build.make CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.i
+.PHONY : src/basic_depth_detection.cpp.i
+
+src/basic_depth_detection.s: src/basic_depth_detection.cpp.s
+.PHONY : src/basic_depth_detection.s
+
+# target to generate assembly for a file
+src/basic_depth_detection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sensors.dir/build.make CMakeFiles/sensors.dir/src/basic_depth_detection.cpp.s
+.PHONY : src/basic_depth_detection.cpp.s
 
 src/realsense_camera_node.o: src/realsense_camera_node.cpp.o
 .PHONY : src/realsense_camera_node.o
@@ -286,11 +347,18 @@ help:
 	@echo "... test"
 	@echo "... sensors_uninstall"
 	@echo "... uninstall"
+	@echo "... depth_node"
 	@echo "... realsense_camera_node"
 	@echo "... sensors"
+	@echo "... rclcpp_components/node_main_depth_node.o"
+	@echo "... rclcpp_components/node_main_depth_node.i"
+	@echo "... rclcpp_components/node_main_depth_node.s"
 	@echo "... rclcpp_components/node_main_realsense_camera_node.o"
 	@echo "... rclcpp_components/node_main_realsense_camera_node.i"
 	@echo "... rclcpp_components/node_main_realsense_camera_node.s"
+	@echo "... src/basic_depth_detection.o"
+	@echo "... src/basic_depth_detection.i"
+	@echo "... src/basic_depth_detection.s"
 	@echo "... src/realsense_camera_node.o"
 	@echo "... src/realsense_camera_node.i"
 	@echo "... src/realsense_camera_node.s"
