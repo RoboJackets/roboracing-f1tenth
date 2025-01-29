@@ -1,2 +1,0 @@
-sensors::RealsenseCameraNode;lib/libsensors.so
-sensors::BasicDepthDetectionNode;lib/libsensors.so
