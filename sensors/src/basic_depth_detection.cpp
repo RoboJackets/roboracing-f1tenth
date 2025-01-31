@@ -44,8 +44,8 @@ private:
     {
         for (int i = 0; i < length; i +=2 ) 
         {
-            unsigned short depth = (((unsigned short) image_msg.data[i]) << 8) + image_msg.data[i+1];
-            if (depth < 300) 
+            unsigned short depth = (((unsigned short) image_msg.data[i+1]) << 8) + image_msg.data[i];
+            if (depth < 1000) 
             {
                 depth = 0;
             }
@@ -53,8 +53,8 @@ private:
             {
                 depth = 65000;
             }
-            unsigned char left = (depth >> 8);
-            unsigned char right = (depth & 0xFF);
+            unsigned char right = (depth >> 8);
+            unsigned char left = (depth & 0xFF);
             image_msg.data[i] = left;
             image_msg.data[i+1] = right;
         }
