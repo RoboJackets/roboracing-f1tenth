@@ -10,10 +10,11 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED src/realsense_camera_node.cpp src/basic_depth_detection.cpp src/opencv_test.cpp)
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs OpenCV)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs OpenCV cv_bridge)
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/)
 rclcpp_components_register_node(
   ${PROJECT_NAME}
@@ -28,7 +29,7 @@ rclcpp_components_register_node(
 rclcpp_components_register_node(
   ${PROJECT_NAME}
   PLUGIN "sensors::OpenCVNode"
-  EXECUTABLE cv_node
+  EXECUTABLE cone_detection_node
 )
 install(DIRECTORY
   launch

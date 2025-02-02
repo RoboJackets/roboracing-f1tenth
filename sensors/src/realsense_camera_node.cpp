@@ -42,10 +42,25 @@ private:
     void timer_callback()
     {
         for (int i = 0; i < length; i += 3) {
-            image_msg.data[i] = 0;
+            if (is_orange(image_msg.data[i], image_msg.data[i + 1], image_msg.data[i + 2])) 
+            {
+                image_msg.data[i] = 255;
+                image_msg.data[i+1] = 255;
+                image_msg.data[i+2] = 255;
+            }
+            else
+            {
+                image_msg.data[i] = 0;
+                image_msg.data[i+1] = 0;
+                image_msg.data[i+2] = 0;
+            }
         }
         publisher_->publish(image_msg);
         std::cout << "publishing" << "\n";
+    }
+    bool is_orange(std::uint8_t r, std::uint8_t g, std::uint8_t b)
+    {
+        return (r > 150 && g < 200 && b < 100);
     }
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
