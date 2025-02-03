@@ -1,8 +1,10 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
+#include <cstdint>
 #include <rclcpp_components/register_node_macro.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
+#include <opencv2/imgproc.hpp>
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -26,36 +28,86 @@ public:
         );
     }
 private:
-    void color_callback(const sensor_msgs::msg::Image & msg)
+    void color_callback(const sensor_msgs::msg::Image::ConstSharedPtr & msg)
     {
         // converting sensor msg image to an OpenCV image
-        auto orig_img = cv_bridge::toCvShare(image_msg, "bgr8");
+        auto orig_img = cv_bridge::toCvShare(msg, "bgr8");
         cv::Mat hsv_img;
         // convert to hsv
-        cv::cvtColor(orig_img, hsv_img, cv::COLOR_BGR2HSV);
+        cv::cvtColor(orig_img->image, hsv_img, cv::COLOR_BGR2HSV);
         // creating a new matrix to fill with filtered values
-        cv::Mat filtered(hsv_img.size(), CV_8UC1);
+        cv::Mat orange_scale_img(hsv_img.size(), CV_8UC1);
         // loop through rows and columns
         for (auto r = 0; r < hsv_img.rows; r++)
         {
-            for (auto c = 0; c < hsv_img.columns; c++)
+            for (auto c = 0; c < hsv_img.cols; c++)
             {
-                // convert hsv to greyscale with orange weighting
-                // not orange             orange
-                // black - - - - - - - - - white
-                const cv::Vec3b color = hsv_img.at<cv::Vec3b>(r, c);
-                output.at<uint8_t>(r, c) = 255;
+                orange_scale_img.at<std::uint8_t>(r, c) = hsv_to_gray_orange(hsv_img.at<cv::Vec3b>(r, c));
             }
         }
+        cv::Mat thresholded_img(hsv_img.size(), CV_8UC1);
+        cv::adaptiveThreshold(orange_scale_img, thresholded_img, 255,
+            cv::THRESH_BINARY, cv::ADAPTIVE_THRESH_MEAN_C, 11, 2);
+        
 
     }
 
-    unsigned char hsv_to_gray_orange(cv::Vec3b hsv)
+    // convert hsv to greyscale with orange weighting
+    // not orange             orange
+    // black - - - - - - - - - white
+    std::uint8_t hsv_to_gray_orange(cv::Vec3b hsv)
     {
-        const unsigned char min_hue = 10;
-        const unsigned char max_hue = 20;
-        const unsigned char min_val = 128;
-        const unsigned char min_sat = 128;
+        const std::uint8_t min_hue = 10;
+        const std::uint8_t max_hue = 20;
+        const std::uint8_t min_val = 128;
+        const std::uint8_t min_sat = 128;
+
+        const int max_dist_hue = 180 - (max_hue - min_hue);
+        const int max_dist_sat = (255 - max_dist_hue) / 2;
+        const int max_dist_val = (255 - max_dist_hue) / 2;
+
+        std::uint8_t dist_hue;
+        std::uint8_t dist_sat;
+        std::uint8_t dist_val;
+        // hue
+        if (hsv[0] < min_hue)
+        {
+            dist_hue = min_hue - hsv[0];
+        }
+        else if (hsv[0] > max_hue)
+        {
+            if (hsv[0] < (180 + min_hue) /2)
+            {
+                dist_hue = hsv[0] - max_hue;
+            }
+            else
+            {
+                dist_hue = 180 + min_hue - hsv[0];
+            }
+        }
+        else
+        {
+            dist_hue = 0;
+        }
+        // saturation
+        if (hsv[1] < min_sat)
+        {
+            dist_sat = max_dist_sat - (hsv[1] * max_dist_sat) / (255 - min_sat);
+        }
+        else
+        {
+            dist_sat = 0;
+        }
+        // value
+        if (hsv[2] < min_val)
+        {
+            dist_val = max_dist_val - (hsv[2] * max_dist_val) / (255 - min_val);
+        }
+        else
+        {
+            dist_val = 0;
+        }
+        return dist_hue + dist_sat + dist_val;
     }
 
     void depth_callback(const sensor_msgs::msg::Image & msg)
