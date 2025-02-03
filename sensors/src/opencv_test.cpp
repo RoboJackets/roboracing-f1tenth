@@ -31,25 +31,26 @@ private:
     void color_callback(const sensor_msgs::msg::Image::ConstSharedPtr & msg)
     {
         // converting sensor msg image to an OpenCV image
-        auto orig_img = cv_bridge::toCvShare(msg, "bgr8");
-        cv::Mat hsv_img;
+        auto orig_img = cv_bridge::toCvCopy(msg, "bgr8");
         // convert to hsv
-        cv::cvtColor(orig_img->image, hsv_img, cv::COLOR_BGR2HSV);
+        cv::cvtColor(orig_img->image, orig_img->image, cv::COLOR_BGR2HSV);
         // creating a new matrix to fill with filtered values
-        cv::Mat orange_scale_img(hsv_img.size(), CV_8UC1);
+        cv::Mat orange_scale_img(orig_img->image.size(), CV_8UC1);
         // loop through rows and columns
-        for (auto r = 0; r < hsv_img.rows; r++)
+        for (auto r = 0; r < orig_img->image.rows; r++)
         {
-            for (auto c = 0; c < hsv_img.cols; c++)
+            for (auto c = 0; c < orig_img->image.cols; c++)
             {
-                orange_scale_img.at<std::uint8_t>(r, c) = hsv_to_gray_orange(hsv_img.at<cv::Vec3b>(r, c));
+                orig_img->image.at<std::uint8_t>(r, c) = hsv_to_gray_orange(orig_img->image.at<cv::Vec3b>(r, c));
             }
         }
-        cv::Mat thresholded_img(hsv_img.size(), CV_8UC1);
+        cv::Mat thresholded_img(orig_img->image.size(), CV_8UC1);
+        // adaptive threshold takes into account changes to color thresholds based on lighting
         cv::adaptiveThreshold(orange_scale_img, thresholded_img, 255,
             cv::THRESH_BINARY, cv::ADAPTIVE_THRESH_MEAN_C, 11, 2);
-        
-
+        // from our CVImage, we call toImageMsg() to get the underlying sensor_msgs::ImagePtr
+        // Then we must dereference this pointer to access the underlying sensor_msgs::msg::Image
+        publisher_->publish(*orig_img->toImageMsg().get());
     }
 
     // convert hsv to greyscale with orange weighting
