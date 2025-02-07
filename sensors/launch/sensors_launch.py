@@ -23,6 +23,12 @@ def generate_launch_description():
             executable='depth_node',
             name='camera_filter'
         ),
+        Node(
+            package='sensors',
+            namespace='sensors',
+            executable='cone_detection_node',
+            name='camera_filter'
+        ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(realsense_launch_file)
         )

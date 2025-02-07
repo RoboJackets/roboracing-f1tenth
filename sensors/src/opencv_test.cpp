@@ -14,21 +14,18 @@ namespace sensors
 class OpenCVNode : public rclcpp::Node
 {
 public:
-    explicit OpenCVNode(const rclcpp::NodeOptions& options) : rclcpp::Node("cv_node", options)
+    explicit OpenCVNode(const rclcpp::NodeOptions& options) : rclcpp::Node("realsense_camera_node", options)
     {
-        color_subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-            "camera/camera/color/image_raw",
-            10,
-            std::bind(&OpenCVNode::color_callback, this, std::placeholders::_1)
-        );
-        depth_subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-            "camera/camera/depth/image_raw",
-            10,
-            std::bind(&OpenCVNode::depth_callback, this, std::placeholders::_1)
-        );
+        color_subscription_ = this->create_subscription<sensor_msgs::msg::Image>("/camera/camera/color/image_raw", 10, std::bind(&OpenCVNode::color_callback, this, std::placeholders::_1));
+        // depth_subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
+        //     "camera/camera/depth/image_raw",
+        //     10,
+        //     std::bind(&OpenCVNode::depth_callback, this, std::placeholders::_1)
+        // );
+        publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/filter/cone", 10);
     }
 private:
-    void color_callback(const sensor_msgs::msg::Image::ConstSharedPtr & msg)
+    void color_callback(const sensor_msgs::msg::Image & msg)
     {
         // converting sensor msg image to an OpenCV image
         auto bridge = cv_bridge::toCvCopy(msg, "bgr8");
@@ -49,10 +46,10 @@ private:
         cv::Mat thresholded_img(orange_scale_img.size(), CV_8UC1);
         // adaptive threshold takes into account changes to color thresholds based on lighting
         cv::adaptiveThreshold(orange_scale_img, thresholded_img, 255,
-            cv::THRESH_BINARY, cv::ADAPTIVE_THRESH_MEAN_C, 11, 2);
+            cv::ADAPTIVE_THRESH_GAUSSIAN_C , cv::THRESH_BINARY, 5, 2);
         std::cout << "publishing" << std::endl;
         // update content of bridge with updated image and corresponsing encoding
-        bridge->encoding = "MONO8"; // might actually be 8UC1
+        bridge->encoding = "8UC1"; // might actually be 8UC1
         bridge->image = thresholded_img;
         // from our CVImage, we call toImageMsg() to get the underlying sensor_msgs::ImagePtr
         // Then we must dereference this pointer to access the underlying sensor_msgs::msg::Image
@@ -64,8 +61,8 @@ private:
     // black - - - - - - - - - white
     std::uint8_t hsv_to_gray_orange(cv::Vec3b hsv)
     {
-        const std::uint8_t min_hue = 10;
-        const std::uint8_t max_hue = 20;
+        const std::uint8_t min_hue = 13;
+        const std::uint8_t max_hue = 17;
         const std::uint8_t min_val = 128;
         const std::uint8_t min_sat = 128;
 
@@ -123,7 +120,7 @@ private:
     }
 
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr color_subscription_;
-    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr depth_subscription_;
+    // rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr depth_subscription_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
 };
 RCLCPP_COMPONENTS_REGISTER_NODE(sensors::OpenCVNode)
