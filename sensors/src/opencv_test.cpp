@@ -1,6 +1,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
 #include <cstdint>
+#include <queue>
 #include <rclcpp_components/register_node_macro.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
@@ -44,9 +45,8 @@ private:
         }
         // TO DO: Test
         cv::Mat thresholded_img(orange_scale_img.size(), CV_8UC1);
-        // adaptive threshold takes into account changes to color thresholds based on lighting
-        cv::adaptiveThreshold(orange_scale_img, thresholded_img, 255,
-            cv::ADAPTIVE_THRESH_GAUSSIAN_C , cv::THRESH_BINARY, 5, 2);
+        // hystereisis threshold takes into account changes to color thresholds based on lighting
+        this->hysteresisThresholding(orange_scale_img, thresholded_img, 20, 40);
         std::cout << "publishing" << std::endl;
         // update content of bridge with updated image and corresponsing encoding
         bridge->encoding = "8UC1"; // might actually be 8UC1
@@ -63,8 +63,8 @@ private:
     {
         const std::uint8_t min_hue = 13;
         const std::uint8_t max_hue = 17;
-        const std::uint8_t min_val = 128;
-        const std::uint8_t min_sat = 128;
+        const std::uint8_t min_val = 235;
+        const std::uint8_t min_sat = 235;
 
         const int max_dist_hue = 180 - (max_hue - min_hue);
         const int max_dist_sat = (255 - max_dist_hue) / 2;
@@ -96,7 +96,7 @@ private:
         // saturation
         if (hsv[1] < min_sat)
         {
-            dist_sat = max_dist_sat - (hsv[1] * max_dist_sat) / (255 - min_sat);
+            dist_sat = max_dist_sat - (hsv[1] * max_dist_sat) / (min_sat);
         }
         else
         {
@@ -105,13 +105,58 @@ private:
         // value
         if (hsv[2] < min_val)
         {
-            dist_val = max_dist_val - (hsv[2] * max_dist_val) / (255 - min_val);
+            dist_val = max_dist_val - (hsv[2] * max_dist_val) / (min_val);
         }
         else
         {
             dist_val = 0;
         }
         return dist_hue + dist_sat + dist_val;
+    }
+
+    void hysteresisThresholding(cv::Mat& img, cv::Mat& out, int T_low, int T_high)
+    {
+        CV_Assert(out.type() == CV_8UC1); // Ensure grayscale image
+
+        int rows = img.rows, cols = img.cols;
+        out = cv::Mat::zeros(rows, cols, CV_8UC1); // Output mask
+
+        std::queue<cv::Point> q;
+
+        // First pass: Identify strong pixels and enqueue them
+        for (int y = 0; y < rows; ++y) {
+            for (int x = 0; x < cols; ++x) {
+                uchar pixel = img.at<uchar>(y, x);
+                if (pixel < T_low) {
+                    out.at<uchar>(y, x) = 255; // Definitely keep
+                    q.push(cv::Point(x, y));  // Add to queue
+                }
+            }
+        }
+
+        // Directions for 8-connectivity
+        int dx[] = {-1, 1, 0, 0, -1, -1, 1, 1};
+        int dy[] = {0, 0, -1, 1, -1, 1, -1, 1};
+
+        // Process queue: Propagate to medium pixels
+        while (!q.empty()) {
+            cv::Point p = q.front();
+            q.pop();
+
+            for (int i = 0; i < 8; ++i) {
+                int nx = p.x + dx[i], ny = p.y + dy[i];
+
+                if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
+                    uchar& neighbor = img.at<uchar>(ny, nx);
+                    uchar& binPixel = out.at<uchar>(ny, nx);
+
+                    if (neighbor >= T_low && neighbor <= T_high && binPixel == 0) {
+                        binPixel = 255; // Keep the medium pixel
+                        q.push(cv::Point(nx, ny)); // Continue search
+                    }
+                }
+            }
+        }
     }
 
     void depth_callback(const sensor_msgs::msg::Image & msg)
