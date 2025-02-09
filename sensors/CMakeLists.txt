@@ -12,7 +12,12 @@ find_package(rclcpp_components REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system)
 
+target_link_libraries(your_node ${PROJECT_NAME} ${Boost_LIBRARIES})
+
+ament_export_dependencies(Boost)
+ament_export_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
 add_library(${PROJECT_NAME} SHARED src/realsense_camera_node.cpp src/basic_depth_detection.cpp src/opencv_test.cpp)
 ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs OpenCV cv_bridge)
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/)
