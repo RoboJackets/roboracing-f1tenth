@@ -16,6 +16,7 @@ public:
     UDPClient();
     void do_receive();
     void handle_receive(const boost::system::error_code& error, size_t);
+    void do_send(const std::string& message, const std::string& destination_ip, const unsigned short port);
 };
 
 UDPClient::UDPClient()
@@ -41,4 +42,14 @@ void UDPClient::handle_receive(const boost::system::error_code& error, size_t by
 
     if (!error || error == boost::asio::error::message_size)
         do_receive();
+}
+
+void UDPClient::do_send(const std::string& message, const std::string& destination_ip, const unsigned short port) {
+	auto remote = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(destination_ip), port);
+	try {
+		socket.send_to(boost::asio::buffer(message), remote);
+
+	} catch (const boost::system::system_error& ex) {
+		std::cout << "Not Sent!" << std::endl;
+	}
 }
