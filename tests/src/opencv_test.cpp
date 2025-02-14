@@ -10,12 +10,12 @@
 
 using namespace std::chrono_literals;
 
-namespace sensors
+namespace tests
 {
 class OpenCVNode : public rclcpp::Node
 {
 public:
-    explicit OpenCVNode(const rclcpp::NodeOptions& options) : rclcpp::Node("realsense_camera_node", options)
+    explicit OpenCVNode(const rclcpp::NodeOptions& options) : rclcpp::Node("tests", options)
     {
         color_subscription_ = this->create_subscription<sensor_msgs::msg::Image>("/camera/camera/color/image_raw", 10, std::bind(&OpenCVNode::color_callback, this, std::placeholders::_1));
         // depth_subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
@@ -168,5 +168,5 @@ private:
     // rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr depth_subscription_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
 };
-RCLCPP_COMPONENTS_REGISTER_NODE(sensors::OpenCVNode)
+RCLCPP_COMPONENTS_REGISTER_NODE(tests::OpenCVNode)
 }

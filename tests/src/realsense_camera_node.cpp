@@ -10,13 +10,13 @@
 using namespace std::chrono_literals;
 
 
-namespace sensors
+namespace tests
 {
 class RealsenseCameraNode : public rclcpp::Node
 {
 public:
     explicit RealsenseCameraNode(const rclcpp::NodeOptions& options)
-        : rclcpp::Node("realsense_camera_node", options)
+        : rclcpp::Node("tests", options)
     {
         // image_msg();
         subscription_ = this->create_subscription<sensor_msgs::msg::Image>("/camera/camera/color/image_raw", 10, std::bind(&RealsenseCameraNode::topic_callback, this, std::placeholders::_1));
@@ -69,5 +69,5 @@ private:
     int length;
 };
 
-RCLCPP_COMPONENTS_REGISTER_NODE(sensors::RealsenseCameraNode)
+RCLCPP_COMPONENTS_REGISTER_NODE(tests::RealsenseCameraNode)
 }

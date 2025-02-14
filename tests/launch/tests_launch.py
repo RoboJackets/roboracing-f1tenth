@@ -12,22 +12,22 @@ def generate_launch_description():
     )
     return LaunchDescription([
         Node(
-            package='sensors',
-            namespace='sensors',
+            package='tests',
+            namespace='tests',
             executable='realsense_camera_node',
-            name='camera_filter'
+            name='tests'
         ),
         Node(
-            package='sensors',
-            namespace='sensors',
+            package='tests',
+            namespace='tests',
             executable='depth_node',
-            name='camera_filter'
+            name='tests'
         ),
         Node(
-            package='sensors',
-            namespace='sensors',
+            package='tests',
+            namespace='tests',
             executable='cone_detection_node',
-            name='camera_filter'
+            name='tests'
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(realsense_launch_file)
