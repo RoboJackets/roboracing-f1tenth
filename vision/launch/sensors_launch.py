@@ -17,6 +17,12 @@ def generate_launch_description():
             executable='cone',
             name='vision'
         ),
+        Node(
+            package='vision',
+            namespace='vision',
+            executable='video',
+            name='vision'
+        ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(realsense_launch_file)
         )
