@@ -1,0 +1,11 @@
+[0.006s] Invoking command in '/sim_ws/src/wall_follower/build/wall_follower': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12
+[0.023s] [35m[1mScanning dependencies of target wall_follower[0m
+[0.033s] [ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[0.444s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kvoid WallFollower::DriveCallback()[m[K’:
+[0.444s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:61:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Duration[m[K’ has no member named ‘[01m[Kmilliseconds[m[K’
+[0.444s]    61 |         msg.drive.steering_angle = angle_pid.computePID(error, dt.[01;31m[Kmilliseconds[m[K());
+[0.444s]       |                                                                   [01;31m[K^~~~~~~~~~~~[m[K
+[0.959s] make[2]: *** [CMakeFiles/wall_follower.dir/build.make:63: CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o] Error 1
+[0.959s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+[0.959s] make: *** [Makefile:141: all] Error 2
+[0.960s] Invoked command in '/sim_ws/src/wall_follower/build/wall_follower' returned '2': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12

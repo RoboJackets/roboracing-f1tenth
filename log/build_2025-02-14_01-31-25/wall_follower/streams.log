@@ -1,0 +1,30 @@
+[0.005s] Invoking command in '/sim_ws/src/wall_follower/build/wall_follower': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12
+[0.023s] [35m[1mScanning dependencies of target wall_follower[0m
+[0.033s] [ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[0.445s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kdouble WallFollower::computeAngleCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[0.446s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:47:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+[0.446s]    47 |     [01;35m[K}[m[K
+[0.446s]       |     [01;35m[K^[m[K
+[1.720s] [ 66%] [32m[1mLinking CXX executable wall_follower[0m
+[1.820s] [100%] Built target wall_follower
+[1.824s] Invoked command in '/sim_ws/src/wall_follower/build/wall_follower' returned '0': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12
+[1.837s] Invoking command in '/sim_ws/src/wall_follower/build/wall_follower': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --install /sim_ws/src/wall_follower/build/wall_follower
+[1.840s] -- Install configuration: ""
+[1.840s] -- Installing: /sim_ws/src/wall_follower/install/wall_follower/lib/wall_follower/wall_follower
+[1.841s] -- Set runtime path of "/sim_ws/src/wall_follower/install/wall_follower/lib/wall_follower/wall_follower" to ""
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/package_run_dependencies/wall_follower
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/parent_prefix_path/wall_follower
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/ament_prefix_path.sh
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/ament_prefix_path.dsv
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/path.sh
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/path.dsv
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.bash
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.sh
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.zsh
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.dsv
+[1.841s] -- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/package.dsv
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/packages/wall_follower
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/cmake/wall_followerConfig.cmake
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/cmake/wall_followerConfig-version.cmake
+[1.841s] -- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/package.xml
+[1.843s] Invoked command in '/sim_ws/src/wall_follower/build/wall_follower' returned '0': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --install /sim_ws/src/wall_follower/build/wall_follower

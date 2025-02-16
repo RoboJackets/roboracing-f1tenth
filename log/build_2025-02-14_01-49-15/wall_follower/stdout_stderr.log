@@ -1,0 +1,9 @@
+[35m[1mScanning dependencies of target wall_follower[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kvoid WallFollower::DriveCallback()[m[K’:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:61:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Duration[m[K’ has no member named ‘[01m[Kmilliseconds[m[K’
+   61 |         msg.drive.steering_angle = angle_pid.computePID(error, dt.[01;31m[Kmilliseconds[m[K());
+      |                                                                   [01;31m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/wall_follower.dir/build.make:63: CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

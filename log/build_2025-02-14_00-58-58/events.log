@@ -1,0 +1,27 @@
+[0.000000] (-) TimerEvent: {}
+[0.000093] (wall_follower) JobQueued: {'identifier': 'wall_follower', 'dependencies': OrderedDict()}
+[0.000118] (wall_follower) JobStarted: {'identifier': 'wall_follower'}
+[0.004305] (wall_follower) JobProgress: {'identifier': 'wall_follower', 'progress': 'cmake'}
+[0.004839] (wall_follower) Command: {'cmd': ['/usr/bin/cmake', '/sim_ws/src/wall_follower', '-DCMAKE_INSTALL_PREFIX=/sim_ws/src/wall_follower/install/wall_follower'], 'cwd': '/sim_ws/src/wall_follower/build/wall_follower', 'env': OrderedDict([('HOSTNAME', '3ec39b7834bb'), ('HOME', '/root'), ('OLDPWD', '/sim_ws/src'), ('ROS_DISTRO', 'foxy'), ('TERM', 'xterm'), ('PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'novnc:0.0'), ('LANG', 'C.UTF-8'), ('LC_ALL', 'C.UTF-8'), ('PWD', '/sim_ws/src/wall_follower/build/wall_follower'), ('COLCON', '1')]), 'shell': False}
+[0.014225] (wall_follower) StderrLine: {'line': b'CMake Error at CMakeLists.txt:19 (find_package):\n'}
+[0.014354] (wall_follower) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[0.014447] (wall_follower) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[0.014488] (wall_follower) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[0.014518] (wall_follower) StderrLine: {'line': b'\n'}
+[0.014553] (wall_follower) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[0.014576] (wall_follower) StderrLine: {'line': b'  any of the following names:\n'}
+[0.014597] (wall_follower) StderrLine: {'line': b'\n'}
+[0.014618] (wall_follower) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[0.014640] (wall_follower) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[0.014664] (wall_follower) StderrLine: {'line': b'\n'}
+[0.014687] (wall_follower) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[0.014713] (wall_follower) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[0.014736] (wall_follower) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[0.014762] (wall_follower) StderrLine: {'line': b'  has been installed.\n'}
+[0.014786] (wall_follower) StderrLine: {'line': b'\n'}
+[0.014809] (wall_follower) StderrLine: {'line': b'\n'}
+[0.014964] (wall_follower) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.015075] (wall_follower) StdoutLine: {'line': b'See also "/sim_ws/src/wall_follower/build/wall_follower/CMakeFiles/CMakeOutput.log".\n'}
+[0.015490] (wall_follower) CommandEnded: {'returncode': 1}
+[0.025982] (wall_follower) JobEnded: {'identifier': 'wall_follower', 'rc': 1}
+[0.037108] (-) EventReactorShutdown: {}

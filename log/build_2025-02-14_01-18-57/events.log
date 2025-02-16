@@ -1,0 +1,69 @@
+[0.000000] (-) TimerEvent: {}
+[0.000438] (wall_follower) JobQueued: {'identifier': 'wall_follower', 'dependencies': OrderedDict()}
+[0.000461] (wall_follower) JobStarted: {'identifier': 'wall_follower'}
+[0.005073] (wall_follower) JobProgress: {'identifier': 'wall_follower', 'progress': 'cmake'}
+[0.005387] (wall_follower) JobProgress: {'identifier': 'wall_follower', 'progress': 'build'}
+[0.005826] (wall_follower) Command: {'cmd': ['/usr/bin/cmake', '--build', '/sim_ws/src/wall_follower/build/wall_follower', '--', '-j12', '-l12'], 'cwd': '/sim_ws/src/wall_follower/build/wall_follower', 'env': OrderedDict([('HOSTNAME', '3ec39b7834bb'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/root'), ('OLDPWD', '/sim_ws/src'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/sim_ws/install'), ('ROS_DISTRO', 'foxy'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'novnc:0.0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy'), ('PWD', '/sim_ws/src/wall_follower/build/wall_follower'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/sim_ws/install/f1tenth_gym_ros/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy')]), 'shell': False}
+[0.017529] (wall_follower) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.023964] (wall_follower) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.073023] (wall_follower) StdoutLine: {'line': b'-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[0.084104] (wall_follower) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.085426] (wall_follower) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.104530] (-) TimerEvent: {}
+[0.120560] (wall_follower) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.139657] (wall_follower) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[0.140235] (wall_follower) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.200663] (wall_follower) StdoutLine: {'line': b'-- Found ackermann_msgs: 2.0.2 (/opt/ros/foxy/share/ackermann_msgs/cmake)\n'}
+[0.205716] (-) TimerEvent: {}
+[0.215364] (wall_follower) StdoutLine: {'line': b'-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)\n'}
+[0.267188] (wall_follower) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[0.292152] (wall_follower) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.295670] (wall_follower) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.295776] (wall_follower) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.295811] (wall_follower) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.298997] (wall_follower) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[0.299038] (wall_follower) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[0.299537] (wall_follower) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[0.300423] (wall_follower) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.300937] (wall_follower) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257\n"}
+[0.304113] (wall_follower) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.304153] (wall_follower) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.304633] (wall_follower) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.305583] (wall_follower) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.306989] (-) TimerEvent: {}
+[0.309351] (wall_follower) StdoutLine: {'line': b'-- Generating done\n'}
+[0.310122] (wall_follower) StdoutLine: {'line': b'-- Build files have been written to: /sim_ws/src/wall_follower/build/wall_follower\n'}
+[0.319477] (wall_follower) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target wall_follower\x1b[0m\n'}
+[0.329643] (wall_follower) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/wall_follower.dir/src/pid_controller.cpp.o\x1b[0m\n'}
+[0.411990] (-) TimerEvent: {}
+[0.517757] (-) TimerEvent: {}
+[0.623707] (-) TimerEvent: {}
+[0.728964] (-) TimerEvent: {}
+[0.828567] (wall_follower) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable wall_follower\x1b[0m\n'}
+[0.829972] (-) TimerEvent: {}
+[0.928377] (wall_follower) StdoutLine: {'line': b'[100%] Built target wall_follower\n'}
+[0.930733] (-) TimerEvent: {}
+[0.932615] (wall_follower) CommandEnded: {'returncode': 0}
+[0.942096] (wall_follower) JobProgress: {'identifier': 'wall_follower', 'progress': 'install'}
+[0.945978] (wall_follower) Command: {'cmd': ['/usr/bin/cmake', '--install', '/sim_ws/src/wall_follower/build/wall_follower'], 'cwd': '/sim_ws/src/wall_follower/build/wall_follower', 'env': OrderedDict([('HOSTNAME', '3ec39b7834bb'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/root'), ('OLDPWD', '/sim_ws/src'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/sim_ws/install'), ('ROS_DISTRO', 'foxy'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'novnc:0.0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy'), ('PWD', '/sim_ws/src/wall_follower/build/wall_follower'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/sim_ws/install/f1tenth_gym_ros/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy')]), 'shell': False}
+[0.948963] (wall_follower) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.949096] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/lib/wall_follower/wall_follower\n'}
+[0.949881] (wall_follower) StdoutLine: {'line': b'-- Set runtime path of "/sim_ws/src/wall_follower/install/wall_follower/lib/wall_follower/wall_follower" to ""\n'}
+[0.949963] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/package_run_dependencies/wall_follower\n'}
+[0.950042] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/parent_prefix_path/wall_follower\n'}
+[0.950115] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/ament_prefix_path.sh\n'}
+[0.950196] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/ament_prefix_path.dsv\n'}
+[0.950283] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/path.sh\n'}
+[0.950313] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/path.dsv\n'}
+[0.950383] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.bash\n'}
+[0.950456] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.sh\n'}
+[0.950489] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.zsh\n'}
+[0.950554] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.dsv\n'}
+[0.950582] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/package.dsv\n'}
+[0.950674] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/packages/wall_follower\n'}
+[0.950746] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/cmake/wall_followerConfig.cmake\n'}
+[0.950823] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/cmake/wall_followerConfig-version.cmake\n'}
+[0.950912] (wall_follower) StdoutLine: {'line': b'-- Installing: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/package.xml\n'}
+[0.952377] (wall_follower) CommandEnded: {'returncode': 0}
+[0.973083] (wall_follower) JobEnded: {'identifier': 'wall_follower', 'rc': 0}
+[0.973480] (-) EventReactorShutdown: {}

@@ -1,0 +1,22 @@
+[0.007s] Invoking command in '/sim_ws/src/wall_follower/build/wall_follower': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12
+[0.023s] [35m[1mScanning dependencies of target wall_follower[0m
+[0.033s] [ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[0.439s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In constructor ‘[01m[KWallFollower::WallFollower()[m[K’:
+[0.439s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:24:91:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KWallFollower::create_wall_timer(int, std::_Bind_helper<false, void (WallFollower::*)(), WallFollower*>::type)[m[K’
+[0.439s]    24 |         timer_ = this->create_wall_timer(50, std::bind(&WallFollower::DriveCallback, this)[01;31m[K)[m[K;
+[0.439s]       |                                                                                           [01;31m[K^[m[K
+[0.439s] In file included from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[0.439s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+[0.439s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[0.439s]                  from [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:1[m[K:
+[0.439s] [01m[K/opt/ros/foxy/include/rclcpp/node.hpp:232:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class DurationRepT, class DurationT, class CallbackT> typename rclcpp::WallTimer<CallbackT>::SharedPtr rclcpp::Node::create_wall_timer(std::chrono::duration<_Rep1, _Period1>, CallbackT, rclcpp::CallbackGroup::SharedPtr)[m[K’
+[0.439s]   232 |   [01;36m[Kcreate_wall_timer[m[K(
+[0.439s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[0.439s] [01m[K/opt/ros/foxy/include/rclcpp/node.hpp:232:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.439s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:24:91:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kint[m[K’
+[0.439s]    24 |         timer_ = this->create_wall_timer(50, std::bind(&WallFollower::DriveCallback, this)[01;36m[K)[m[K;
+[0.439s]       |                                                                                           [01;36m[K^[m[K
+[0.946s] make[2]: *** [CMakeFiles/wall_follower.dir/build.make:63: CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o] Error 1
+[0.946s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+[0.946s] make: *** [Makefile:141: all] Error 2
+[0.947s] Invoked command in '/sim_ws/src/wall_follower/build/wall_follower' returned '2': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12

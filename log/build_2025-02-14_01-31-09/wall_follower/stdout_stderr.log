@@ -1,0 +1,30 @@
+[35m[1mScanning dependencies of target wall_follower[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kdouble WallFollower::computeAngleCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:47:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+   47 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kdouble WallFollower::DriveCallback()[m[K’:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:52:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+   52 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+[ 66%] [32m[1mLinking CXX executable wall_follower[0m
+[100%] Built target wall_follower
+-- Install configuration: ""
+-- Installing: /sim_ws/src/wall_follower/install/wall_follower/lib/wall_follower/wall_follower
+-- Set runtime path of "/sim_ws/src/wall_follower/install/wall_follower/lib/wall_follower/wall_follower" to ""
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/package_run_dependencies/wall_follower
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/parent_prefix_path/wall_follower
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/ament_prefix_path.sh
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/ament_prefix_path.dsv
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/path.sh
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/environment/path.dsv
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.bash
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.sh
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.zsh
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/local_setup.dsv
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/package.dsv
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/ament_index/resource_index/packages/wall_follower
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/cmake/wall_followerConfig.cmake
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/cmake/wall_followerConfig-version.cmake
+-- Up-to-date: /sim_ws/src/wall_follower/install/wall_follower/share/wall_follower/package.xml

@@ -1,0 +1,6 @@
+/usr/bin/ld: CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o: in function `WallFollower::WallFollower()':
+wall_follower.cpp:(.text._ZN12WallFollowerC2Ev[_ZN12WallFollowerC5Ev]+0x15c): undefined reference to `PIDController::PIDController(double, double, double, double, double)'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/wall_follower.dir/build.make:146: wall_follower] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,76 @@
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:35:17:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscriber[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+   35 |         rclcpp::[01;31m[KSubscriber[m[K<sensor_msgs::msg::LaserScan>::SharedPtr lidar_subscriber_;
+      |                 [01;31m[K^~~~~~~~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:52:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+   52 | }
+      |  [01;31m[K^[m[K
+      |  [32m[K;[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In constructor ‘[01m[KWallFollower::WallFollower()[m[K’:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:10:45:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KPIDController::PIDController()[m[K’
+   10 |         WallFollower() : Node("WallFollower"[01;31m[K)[m[K
+      |                                             [01;31m[K^[m[K
+In file included from [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:2[m[K:
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:7:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KPIDController::PIDController(double, double, double, double, double)[m[K’
+    7 |         [01;36m[KPIDController[m[K(double C, double P, double I, double D, double integral_bound);
+      |         [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:7:9:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 0 provided
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr PIDController::PIDController(const PIDController&)[m[K’
+    4 | class [01;36m[KPIDController[m[K {
+      |       [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr PIDController::PIDController(PIDController&&)[m[K’
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:17:13:[m[K [01;31m[Kerror: [m[K‘[01m[Klidar_subscriber_[m[K’ was not declared in this scope
+   17 |             [01;31m[Klidar_subscriber_[m[K = this->create_subscriber<sensor_msgs::msg::LaserScan>(
+      |             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:17:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass WallFollower[m[K’ has no member named ‘[01m[Kcreate_subscriber[m[K’; did you mean ‘[01m[Kcreate_subscription[m[K’?
+   17 |             lidar_subscriber_ = this->[01;31m[Kcreate_subscriber[m[K<sensor_msgs::msg::LaserScan>(
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                       [32m[Kcreate_subscription[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:17:84:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   17 |             lidar_subscriber_ = this->create_subscriber<sensor_msgs::msg::LaserScan[01;31m[K>[m[K(
+      |                                                                                    [01;31m[K^[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:18:17:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+   18 |                 [01;35m[K"/scan"[m[K,
+      |                 [01;35m[K^~~~~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:20:91:[m[K [01;35m[Kwarning: [m[Kright operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+   20 |                 std::bind(&WallFollower::computeAngleCallback, this, std::placeholders::_1[01;35m[K)[m[K
+      |                                                                                           [01;35m[K^[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:28:69:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[KPIDController[m[K’ and ‘[01m[KPIDController*[m[K’)
+   28 |             angle_pid = new PIDController(C, P, I, D, integral_bound[01;31m[K)[m[K;
+      |                                                                     [01;31m[K^[m[K
+In file included from [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:2[m[K:
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr PIDController& PIDController::operator=(const PIDController&)[m[K’
+    4 | class [01;36m[KPIDController[m[K {
+      |       [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPIDController*[m[K’ to ‘[01m[Kconst PIDController&[m[K’
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr PIDController& PIDController::operator=(PIDController&&)[m[K’
+[01m[K/sim_ws/src/wall_follower/src/pid_controller.hpp:4:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KPIDController*[m[K’ to ‘[01m[KPIDController&&[m[K’
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:22:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KL[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   22 |             double [01;35m[KL[m[K;
+      |                    [01;35m[K^[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kdouble WallFollower::computeAngleCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:42:9:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+   42 |         [01;35m[K}[m[K
+      |         [01;35m[K^[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:40:82:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   40 |         double computeAngleCallback([01;35m[Kconst sensor_msgs::msg::LaserScan::SharedPtr msg[m[K) {
+      |                                     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kdouble WallFollower::DriveCallback()[m[K’:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:51:9:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+   51 |         [01;35m[K}[m[K
+      |         [01;35m[K^[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K At global scope:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:55:5:[m[K [01;35m[Kwarning: [m[Kfirst argument of ‘[01m[Kint main(char*, char**)[m[K’ should be ‘[01m[Kint[m[K’ [[01;35m[K-Wmain[m[K]
+   55 | int [01;35m[Kmain[m[K(char* argc, char** argv) {
+      |     [01;35m[K^~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In function ‘[01m[Kint main(char*, char**)[m[K’:
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:55:16:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   55 | int main([01;35m[Kchar* argc[m[K, char** argv) {
+      |          [01;35m[K~~~~~~^~~~[m[K
+[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:55:29:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   55 | int main(char* argc, [01;35m[Kchar** argv[m[K) {
+      |                      [01;35m[K~~~~~~~^~~~[m[K
+make[2]: *** [CMakeFiles/wall_follower.dir/build.make:63: CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

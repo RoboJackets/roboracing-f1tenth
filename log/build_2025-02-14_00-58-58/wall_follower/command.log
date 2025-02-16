@@ -1,0 +1,2 @@
+Invoking command in '/sim_ws/src/wall_follower/build/wall_follower': /usr/bin/cmake /sim_ws/src/wall_follower -DCMAKE_INSTALL_PREFIX=/sim_ws/src/wall_follower/install/wall_follower
+Invoked command in '/sim_ws/src/wall_follower/build/wall_follower' returned '1': /usr/bin/cmake /sim_ws/src/wall_follower -DCMAKE_INSTALL_PREFIX=/sim_ws/src/wall_follower/install/wall_follower

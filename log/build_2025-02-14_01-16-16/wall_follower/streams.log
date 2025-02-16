@@ -1,0 +1,17 @@
+[0.007s] Invoking command in '/sim_ws/src/wall_follower/build/wall_follower': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12
+[0.028s] [ 50%] [32mBuilding CXX object CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o[0m
+[0.428s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:32:73:[m[K [01;35m[Kwarning: [m[Kextra ‘[01m[K;[m[K’ [[01;35m[K-Wpedantic[m[K]
+[0.428s]    32 |     PIDController angle_pid = PIDController(C, P, I, D, integral_bound);[01;35m[K;[m[K
+[0.428s]       |                                                                         [01;35m[K^[m[K
+[0.428s]       |                                                                         [31m[K-[m[K
+[0.432s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kdouble WallFollower::computeAngleCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[0.432s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:37:16:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before numeric constant
+[0.432s]    37 |         double [01;31m[K0_dist[m[K = ranges[(int) ((0 - msg->angle_min) / msg->angle_increment)];
+[0.432s]       |                [01;31m[K^~~~~~[m[K
+[0.432s] [01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:38:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+[0.432s]    38 |     [01;35m[K}[m[K
+[0.432s]       |     [01;35m[K^[m[K
+[0.947s] make[2]: *** [CMakeFiles/wall_follower.dir/build.make:63: CMakeFiles/wall_follower.dir/src/wall_follower.cpp.o] Error 1
+[0.947s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/wall_follower.dir/all] Error 2
+[0.948s] make: *** [Makefile:141: all] Error 2
+[0.948s] Invoked command in '/sim_ws/src/wall_follower/build/wall_follower' returned '2': CMAKE_PREFIX_PATH=/sim_ws/install/f1tenth_gym_ros:/opt/ros/foxy /usr/bin/cmake --build /sim_ws/src/wall_follower/build/wall_follower -- -j12 -l12
