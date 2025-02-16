@@ -23,7 +23,7 @@ public:
 
         timer_ = this->create_wall_timer(std::chrono::milliseconds(50), std::bind(&WallFollower::DriveCallback, this));
         // PID parameters (set default values)
-        double C = 1.0, P = 0.1, I = 0.01, D = 0.001, integral_bound = 10.0;
+        double C = 1.0, P = 1, I = 0, D = 0, integral_bound = 10.0;
         angle_pid = PIDController(C, P, I, D, integral_bound);
     }
 
