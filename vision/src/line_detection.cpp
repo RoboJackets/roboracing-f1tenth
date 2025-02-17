@@ -32,7 +32,7 @@ private:
         cv::Mat blur;
         cv::GaussianBlur(img, blur, cv::Size(5, 5), 0);
         cv::Canny(blur, img, 100, 200);
-        this->findLines(img, blur, 30);
+        this->findLines(img, blur, 5);
         bridge->encoding = "8UC1";
         bridge->image = blur;
         publisher_->publish(*bridge->toImageMsg().get());
@@ -42,9 +42,15 @@ private:
     {
         int rows = img.rows, cols = img.cols;
         out = cv::Mat::zeros(rows, cols, CV_8UC1);
-        int horizon = 600;
+        findLineRight(img, out, kernel);
+        findLineLeft(img, out, kernel);
+    }
+    void findLineLeft(cv::Mat& img, cv::Mat& out, int kernel)
+    {
+        int rows = img.rows, cols = img.cols;
+        int horizon = 400;
         std::queue<cv::Point> queue;
-        queue.push(cv::Point(0, rows - 1));
+        queue.push(cv::Point(rows - 1, 0));
         cv::Point p;
         bool found = false;
         do
@@ -55,22 +61,52 @@ private:
             {
                 for (int y = 0; y < kernel; y++)
                 {
-                    uint8_t val = img.at<uint8_t>(p.x + x, p.y - y);
-                    std::cout << p.y << std::endl;
-                    if (val > 0 && out.at<uint8_t>(p.x + x, p.y - y) != 255) 
+                    uint8_t val = img.at<uint8_t>(p.x - x, p.y + y);
+                    if (val > 0 && out.at<uint8_t>(p.x - x, p.y + y) != 255) 
                     {
                         found = true;
-                        out.at<uint8_t>(p.x + x, p.y - y) = 255;
-                        queue.push(cv::Point(p.x + x, p.y - y));
+                        out.at<uint8_t>(p.x - x, p.y + y) = 255;
+                        queue.push(cv::Point(p.x - x, p.y + y));
                     }
                 }
             }
             if (!found)
             {
-                queue.push(cv::Point(0, p.y - 1));
+                queue.push(cv::Point(p.x - 1, 0));
             }
-        } while (queue.size() != 0 && p.y > horizon);
-        std::cout << "done" << std::endl;
+        } while (queue.size() != 0 && p.x > horizon);
+    }
+
+    void findLineRight(cv::Mat& img, cv::Mat& out, int kernel)
+    {
+        int rows = img.rows, cols = img.cols;
+        int horizon = 400;
+        std::queue<cv::Point> queue;
+        queue.push(cv::Point(rows - 1, cols - 1));
+        cv::Point p;
+        bool found = false;
+        do
+        {
+            p = queue.front();
+            queue.pop();
+            for (int x = 0; x < kernel; x++) 
+            {
+                for (int y = 0; y < kernel; y++)
+                {
+                    uint8_t val = img.at<uint8_t>(p.x - x, p.y - y);
+                    if (val > 0 && out.at<uint8_t>(p.x - x, p.y - y) != 255) 
+                    {
+                        found = true;
+                        out.at<uint8_t>(p.x - x, p.y - y) = 255;
+                        queue.push(cv::Point(p.x - x, p.y - y));
+                    }
+                }
+            }
+            if (!found)
+            {
+                queue.push(cv::Point(p.x - 1, cols - 1));
+            }
+        } while (queue.size() != 0 && p.x > horizon);
     }
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
