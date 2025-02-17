@@ -35,9 +35,16 @@ private:
         }
         cv::Mat frame;
         this->capture >> frame;
+        int count = 0;
         while (frame.empty())
         {
+            if (count > 100) {
+                const std::string path = this->get_parameter("path_to_vid").as_string();
+                this->capture = cv::VideoCapture(path);
+                count = 0;
+            }
             this->capture >> frame;
+            count++;
         }
         cv_bridge::CvImage cv_bridge_image;
         // auto temp = this->capture.get(cv::CAP_PROP_FOURCC)
