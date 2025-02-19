@@ -8,6 +8,7 @@
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc.hpp>
+#include "./least_squares_line.cpp"
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -65,7 +66,7 @@ private:
                     if (val > 0 && out.at<uint8_t>(p.x - x, p.y + y) != 255) 
                     {
                         found = true;
-                        out.at<uint8_t>(p.x - x, p.y + y) = 255;
+                        // out.at<uint8_t>(p.x - x, p.y + y) = 255;
                         queue.push(cv::Point(p.x - x, p.y + y));
                     }
                 }
