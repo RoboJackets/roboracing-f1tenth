@@ -15,6 +15,4 @@ class PIDController {
         double integral_error = 0.0;
         double integral_bound;
         double prev_error = 0.0;
-
-
 };

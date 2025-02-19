@@ -26,14 +26,20 @@ find_package(sensor_msgs REQUIRED)
 
 add_executable(
   driver src/wall_follower.cpp
-        src/pid_controller.cpp
 )
 ament_target_dependencies(driver rclcpp ackermann_msgs sensor_msgs)
 
-install(TARGETS
-  driver
+install(
+  DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  TARGETS driver
   DESTINATION lib/${PROJECT_NAME}
 )
+
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

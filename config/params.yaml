@@ -1,0 +1,8 @@
+wall_follower:
+  ros__parameters:
+    C: 1
+    P: 0.1
+    I: 0
+    D: 0
+    velocity: 0.5
+    desired_trajectory: 0.5
