@@ -8,8 +8,8 @@
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc.hpp>
-#include "./least_squares_line.cpp"
 #include <chrono>
+#include <cmath>
 
 using namespace std::chrono_literals;
 
@@ -30,12 +30,14 @@ private:
         auto bridge = cv_bridge::toCvCopy(msg, "bgr8");
         cv::Mat img;
         cv::cvtColor(bridge->image, img, cv::COLOR_BGR2GRAY);
-        cv::Mat blur;
-        cv::GaussianBlur(img, blur, cv::Size(5, 5), 0);
-        cv::Canny(blur, img, 100, 200);
-        this->findLines(img, blur, 5);
+        cv::Mat img2;
+        cv::GaussianBlur(img, img2, cv::Size(5, 5), 0);
+        cv::Canny(img2, img, 100, 200);
+        // this->dist_to_white(img, img2);
+        // cv::threshold(img2, img, 70, 255, cv::THRESH_BINARY_INV);
+        this->findLines(img, img2, 5);
         bridge->encoding = "8UC1";
-        bridge->image = blur;
+        bridge->image = img2;
         publisher_->publish(*bridge->toImageMsg().get());
     }
 
@@ -46,6 +48,7 @@ private:
         findLineRight(img, out, kernel);
         findLineLeft(img, out, kernel);
     }
+
     void findLineLeft(cv::Mat& img, cv::Mat& out, int kernel)
     {
         int rows = img.rows, cols = img.cols;
@@ -66,7 +69,7 @@ private:
                     if (val > 0 && out.at<uint8_t>(p.x - x, p.y + y) != 255) 
                     {
                         found = true;
-                        // out.at<uint8_t>(p.x - x, p.y + y) = 255;
+                        out.at<uint8_t>(p.x - x, p.y + y) = 255;
                         queue.push(cv::Point(p.x - x, p.y + y));
                     }
                 }
@@ -78,7 +81,28 @@ private:
         } while (queue.size() != 0 && p.x > horizon);
     }
 
-    void findLineRight(cv::Mat& img, cv::Mat& out, int kernel)
+    void dist_to_white(const cv::Mat& img, cv::Mat& out)
+    {
+        out = cv::Mat::zeros(img.rows, img.cols, CV_8UC1);
+        cv::Mat dr(img.rows, img.cols, CV_8UC1);
+        for (int r = 0; r < img.rows; r++)
+        {
+            for (int c = 0; c < img.cols; c++) {
+                cv::Vec3b pix = img.at<cv::Vec3b>(r, c);
+                int dr = 255 - pix[2]; 
+                int dg = 255 - pix[1]; 
+                int db = 255 - pix[0];
+                int dist_squared = dr * dr + dg * dg + db * db;
+                int dist = std::sqrt((double)dist_squared);
+                if (dist > 255) {
+                    dist = 255;
+                }
+                out.at<uint8_t>(r, c) = dist;
+            }
+        }
+    }
+
+    void findLineRight(const cv::Mat& img, cv::Mat& out, int kernel)
     {
         int rows = img.rows, cols = img.cols;
         int horizon = 400;
