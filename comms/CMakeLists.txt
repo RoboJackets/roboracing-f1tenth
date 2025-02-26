@@ -8,7 +8,7 @@ endif()
 add_library(udp_send src/udp_client.cpp)
 
 find_package(ament_cmake REQUIRED)
-find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED)
 
 target_link_libraries(udp_send ${PROJECT_NAME} ${Boost_LIBRARIES})
 

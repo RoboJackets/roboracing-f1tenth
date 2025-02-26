@@ -53,3 +53,10 @@ void UDPClient::do_send(const std::string& message, const std::string& destinati
 		std::cout << "Not Sent!" << std::endl;
 	}
 }
+
+int main()
+{
+    UDPClient client;
+    client.send_to("hello world", "192.168.20.3", 8888);
+    return 0;
+}
