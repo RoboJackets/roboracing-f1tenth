@@ -50,9 +50,9 @@ Before testing UDP connections via ethernet cable. Make sure that 'Windows Defen
 Refer to this tutorial: https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/windows-firewall/configure
 
 - Configuring IPV4 to allow for UDP Connections
-For windows, go to Settings > Network & Internet > Ethernet
-
-Manually set IPv4 address to 192.168.20.4 (Make sure that two devices are not using the same IP address)
+For windows, go to Settings > Network & Internet > Ethernet > IP Assignment
+1. Set 'Edit IP Settings' to Manual
+2. Turn IPv4 on and set the 'IP address' to 192.168.20.4 (Make sure that two devices are not using the same IP address)
 
 - Windows Firewall Inbound Rule
 ## Testing on Windows for sent UDP commands
