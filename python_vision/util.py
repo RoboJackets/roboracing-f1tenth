@@ -243,4 +243,50 @@ def dist_to_mean(
     if cap255:
         np.minimum(dist, 255)
     return dist
-    
+
+def flood_fill(
+    img,
+    start_x: int | float,
+    start_y: int | float,
+    new_value: int=128
+):
+    img_height, img_width = img.shape[0:2]
+    if (start_x < 1):
+        start_x *= img_width
+    elif start_x == 1:
+        start_x = img_width - 1
+    if (start_y < 1):
+        start_y *= img_height
+    elif start_y == 1:
+        start_y = img_height - 1
+    start_x = int(start_x)
+    start_y = int(start_y)
+    _, out, _, _ = cv2.floodFill(img, mask=None, seedPoint=(start_x, start_y), newVal=new_value)
+    return out
+
+def erode(
+    img,
+    size_x: int,
+    size_y: int=None
+):
+    if size_y is None:
+        size_y = size_x
+    return cv2.erode(img, np.ones((size_y, size_x), np.uint8))
+
+def dilate(
+    img,
+    size_x: int,
+    size_y: int=None
+):
+    if size_y is None:
+        size_y = size_x
+    return cv2.dilate(img, np.ones((size_y, size_x), np.uint8))
+
+def opening(
+    img,
+    size_x: int,
+    size_y: int=None
+):
+    if size_y is None:
+        size_y = size_x
+    return cv2.morphologyEx(img, cv2.MORPH_OPEN, np.ones((size_y, size_x), np.uint8))
