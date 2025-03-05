@@ -1,5 +1,5 @@
 #include <boost/asio.hpp>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/array.hpp>
 #include <iostream>
 
@@ -57,6 +57,6 @@ void UDPClient::do_send(const std::string& message, const std::string& destinati
 int main()
 {
     UDPClient client;
-    client.send_to("hello world", "192.168.20.3", 8888);
+    client.do_send("hello world", "192.168.20.2", 8888);
     return 0;
 }
