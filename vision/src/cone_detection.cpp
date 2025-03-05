@@ -6,7 +6,9 @@
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc.hpp>
+#include <vector>
 #include <chrono>
+#include <iostream>
 
 using namespace std::chrono_literals;
 
@@ -42,6 +44,7 @@ private:
         cv::Mat thresholded_img(orange_scale_img.size(), CV_8UC1);
         // hystereisis threshold takes into account changes to color thresholds based on lighting
         this->hysteresisThresholding(orange_scale_img, thresholded_img, 20, 40);
+        this->drawBoundingBoxes(thresholded_img);
         std::cout << "publishing" << std::endl;
         // update content of bridge with updated image and corresponsing encoding
         bridge->encoding = "8UC1"; // might actually be 8UC1
@@ -56,8 +59,8 @@ private:
     // black - - - - - - - - - white
     std::uint8_t hsv_to_gray_orange(cv::Vec3b hsv)
     {
-        const std::uint8_t min_hue = 13;
-        const std::uint8_t max_hue = 17;
+        const std::uint8_t min_hue = 12;
+        const std::uint8_t max_hue = 18;
         const std::uint8_t min_val = 235;
         const std::uint8_t min_sat = 235;
 
@@ -151,6 +154,19 @@ private:
                     }
                 }
             }
+        }
+    }
+
+    // Need to threshold for cones first using hsv/rgb filtering and hysterisis threshold
+    void drawBoundingBoxes(cv::Mat& img)
+    {
+        std::vector<std::vector<cv::Point>> contours;
+        cv::findContours(img, contours, 1, 2);
+        for (int i = 0; i < contours.size(); i++)
+        {
+            auto cnt = contours[i];
+            auto rect = cv::boundingRect(cnt);
+            cv::rectangle(img, cv::Point(rect.x, rect.y), cv::Point(rect.x + rect.width, rect.y + rect.height), 128, 5);
         }
     }
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
