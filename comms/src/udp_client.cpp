@@ -2,21 +2,26 @@
 #include <boost/bind/bind.hpp>
 #include <boost/array.hpp>
 #include <iostream>
+#include <ros/ros.h>
 
 using boost::asio::ip::udp;
 
-class UDPClient
+class UDPClient : public rclcpp::Node
 {
 public:
+   explicit UDPClient(const rclcpp::NodeOptions& options) : Node("udp_client", options)
+   {
+    subscription = this->create_subscription<std_msgs::msg::String>("udp_send", 10, std:bind()) -> {
+
+    })
     boost::asio::io_service io_service;
     udp::socket socket;
     udp::endpoint receiver_endpoint;
     boost::array<char, 1024> recv_buffer;
-
-    UDPClient();
     void do_receive();
     void handle_receive(const boost::system::error_code& error, size_t);
     void do_send(const std::string& message, const std::string& destination_ip, const unsigned short port);
+   }
 };
 
 UDPClient::UDPClient()
@@ -43,6 +48,7 @@ void UDPClient::handle_receive(const boost::system::error_code& error, size_t by
     if (!error || error == boost::asio::error::message_size)
         do_receive();
 }
+void udpcallback()
 
 void UDPClient::do_send(const std::string& message, const std::string& destination_ip, const unsigned short port) {
 	auto remote = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(destination_ip), port);
@@ -54,9 +60,13 @@ void UDPClient::do_send(const std::string& message, const std::string& destinati
 	}
 }
 
-int main()
+int main(int argc, char **argv)
 {
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<UDPClient>());
+    
     UDPClient client;
     client.do_send("hello world", "192.168.20.2", 8888);
+    rclcpp::shutdown();
     return 0;
 }
