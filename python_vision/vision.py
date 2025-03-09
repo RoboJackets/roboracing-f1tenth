@@ -12,7 +12,7 @@ def get_cones(frame):
     threshold = util.hysteresis_threshold(dist_orange, 120, 160)
     return threshold
 
-def get_track(frame, threshold_val: int=10):
+def get_track(frame, threshold_val: int=10, opening_val:int=7):
     # Calculates the distance from every pixel to its grayscale.
     dist_mean = util.dist_to_mean(frame).astype(np.uint8)
     # Track is very gray so distance should be small
@@ -20,7 +20,7 @@ def get_track(frame, threshold_val: int=10):
     threshold = util.invert(threshold)
     # Erode then dialte the image to remove noisy connections from track to
     # outside
-    opened = util.opening(threshold, 7)
+    opened = util.opening(threshold, opening_val)
     # Floodfill from the bottommost pixel at half the width
     flood = util.flood_fill(opened, 0.5, 1)
     return flood

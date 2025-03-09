@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 import util
+import vision
+import calibrate
 
 def main():
     # Open webcam (0 = default camera)
@@ -13,19 +15,16 @@ def main():
         if not ret:
             continue  # If the camera fails, exit
 
-        # Remove above horizon
-        frame = util.rect(frame, 0, 1, 0.48, 1)
+        # frame = calibrate.draw_grid_corners(frame)
+        calibrate.test(frame)
         
-        dist_mean = util.dist_to_mean(frame).astype(np.uint8)
-        # blur = cv2.GaussianBlur(frame, (5, 5), 0)
-        # _, otsu = cv2.threshold(dist_mean, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+        undistort_func = calibrate.get_undistort_function()
+        undistort = undistort_func(frame)
 
-        # dist_mean = util.dist_to_mean(frame, cap255=True).astype(np.uint8)
+        # Remove above horizon
+        # frame = util.rect(frame, 0, 1, 0.48, 1)
+        # blur = cv2.GaussianBlur(frame, (7, 7), 0)
         
-        threshold = util.threshold(dist_mean, 10)
-        threshold = util.invert(threshold)
-        opened = util.opening(threshold, 7)
-        flood = util.flood_fill(opened, 0.5, 1)
 
         # min_pix = np.asarray([80, 80, 80], dtype=np.uint8)
         # max_pix = np.asarray([170, 170, 170], dtype=np.uint8)
@@ -47,8 +46,8 @@ def main():
         # )
 
         # Show the original and processed frames
-        cv2.imshow("Original", dist_mean)
-        cv2.imshow("Filter", flood)
+        cv2.imshow("Original", frame)
+        cv2.imshow("Filter", undistort)
 
         # Press 'q' to exit
         if cv2.waitKey(1) & 0xFF == ord('q'):
