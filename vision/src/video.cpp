@@ -19,7 +19,7 @@ public:
     explicit VideoNode(const rclcpp::NodeOptions& options) : rclcpp::Node("vision", options)
     {
         // this->declare_parameter("path_to_vid", "/home/ubuntu/rj_training_container/training_ws/race.MP4");
-        this->declare_parameter("path_to_vid", "/home/roboracing/Downloads/race.MP4");
+        this->declare_parameter("path_to_vid", "/home/ubuntu/rj_training_container/training_ws/race.MP4");
         const std::string path = this->get_parameter("path_to_vid").as_string();
         this->capture = cv::VideoCapture(path);
         publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/video", 10);

@@ -29,16 +29,25 @@ private:
         // converting sensor msg image to an OpenCV image
         auto bridge = cv_bridge::toCvCopy(msg, "bgr8");
         cv::Mat img;
-        cv::cvtColor(bridge->image, img, cv::COLOR_BGR2GRAY);
+        // cv::cvtColor(bridge->image, img, cv::COLOR_BGR2GRAY);
         cv::Mat img2;
-        cv::GaussianBlur(img, img2, cv::Size(5, 5), 0);
-        cv::Canny(img2, img, 100, 200);
+        this->cropHorizon(bridge->image, img2, .48);
+        this->filterRoad(img2, img);
+        // cv::GaussianBlur(img, img2, cv::Size(5, 5), 0);
+        // cv::Canny(img, img2, 100, 200);
         // this->dist_to_white(img, img2);
         // cv::threshold(img2, img, 70, 255, cv::THRESH_BINARY_INV);
-        this->findLines(img, img2, 5);
+        // this->findLines(img, img2, 5);
         bridge->encoding = "8UC1";
-        bridge->image = img2;
+        bridge->image = img;
         publisher_->publish(*bridge->toImageMsg().get());
+    }
+
+    void cropHorizon(cv::Mat& img, cv::Mat& out, float percent_start)
+    {
+        int rows = img.rows, cols = img.cols;
+        cv::Rect crop(0, rows*percent_start, cols, rows-rows*percent_start);
+        out = img(crop);
     }
 
     void findLines(cv::Mat& img, cv::Mat& out, int kernel)
@@ -132,6 +141,23 @@ private:
                 queue.push(cv::Point(p.x - 1, cols - 1));
             }
         } while (queue.size() != 0 && p.x > horizon);
+    }
+
+    void filterRoad(const cv::Mat& img, cv::Mat& out)
+    {
+        out = cv::Mat::zeros(img.rows, img.cols, CV_8UC1);
+        int rows = img.rows, cols = img.cols;
+        for (int r = 0; r < rows; r++)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                cv::Vec3b bgr = img.at<cv::Vec3b>(r, c);
+                int avg = (((int)bgr[0] + (int)bgr[1] + (int)bgr[2])/3);
+                int dist_squared = (avg - bgr[0])*(avg - bgr[0]) + (avg - bgr[1])*(avg - bgr[1]) + (avg - bgr[2])*(avg - bgr[2]);
+                uint8_t dist = sqrt(dist_squared);
+                out.at<uint8_t>(r, c) = dist;
+            }
+        }
     }
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
