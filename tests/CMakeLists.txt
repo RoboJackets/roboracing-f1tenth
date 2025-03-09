@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(sensors)
+project(tests)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -18,17 +18,17 @@ ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs O
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/)
 rclcpp_components_register_node(
   ${PROJECT_NAME}
-  PLUGIN "sensors::RealsenseCameraNode"
+  PLUGIN "tests::RealsenseCameraNode"
   EXECUTABLE realsense_camera_node
 )
 rclcpp_components_register_node(
   ${PROJECT_NAME}
-  PLUGIN "sensors::BasicDepthDetectionNode"
+  PLUGIN "tests::BasicDepthDetectionNode"
   EXECUTABLE depth_node
 )
 rclcpp_components_register_node(
   ${PROJECT_NAME}
-  PLUGIN "sensors::OpenCVNode"
+  PLUGIN "tests::OpenCVNode"
   EXECUTABLE cone_detection_node
 )
 install(DIRECTORY
