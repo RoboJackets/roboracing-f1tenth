@@ -10,21 +10,40 @@ corner_pixel_coordinates = np.array([
     [677, 368], [732, 394], [823, 439],
     [759, 362], [827, 384], [924, 416],
     # [830, 357], [893, 374]
-], dtype=np.float32).reshape(-1, 1, 2)  # Reshape for OpenCV compatibility
+], dtype=np.float32).reshape(-1, 2)  # Reshape for OpenCV compatibility
 
 # Grid coordinates where top left is [0, 0, Z=0]
 corner_grid_coordinates = np.array([
-    [0, 0, 0], [1, 0, 0], [2, 0, 0],
-    [0, 1, 0], [1, 1, 0], [2, 1, 0],
-    [0, 2, 0], [1, 2, 0], [2, 2, 0],
-    [0, 3, 0], [1, 3, 0], [2, 3, 0],
-    [0, 4, 0], [1, 4, 0], [2, 4, 0],
-    [0, 5, 0], [1, 5, 0], [2, 5, 0],
+    [0, 0, 0], [0, 1, 0], [0, 2, 0],
+    [1, 0, 0], [1, 1, 0], [1, 2, 0],
+    [2, 0, 0], [2, 1, 0], [2, 2, 0],
+    [3, 0, 0], [3, 1, 0], [3, 2, 0],
+    [4, 0, 0], [4, 1, 0], [4, 2, 0],
+    [5, 0, 0], [5, 1, 0], [5, 2, 0],
     # [0, 6, 0], [1, 6, 0]
-], dtype=np.float32).reshape(-1, 1, 3)  # Reshape for OpenCV compatibility
+], dtype=np.float32).reshape(-1, 3)  # Reshape for OpenCV compatibility
 
 image_width = 906
 image_height = 540
+
+dist = 15
+corner_grid_coordinates *= dist
+corner_grid_coordinates[:, 0] += image_width / 2 - dist
+corner_grid_coordinates[:, 1] += image_height - 1 - dist * 3
+
+def compute_homography():
+    """Computes the homography matrix for perspective transformation."""
+    H, status = cv2.findHomography(corner_pixel_coordinates, corner_grid_coordinates)
+    return H
+
+def warp_perspective(image):
+    """Applies perspective transformation using homography."""
+    H = compute_homography()
+    
+    # Warp the perspective
+    warped_image = cv2.warpPerspective(image, H, (image_width, image_height))
+
+    return warped_image
 
 def calibrate_camera():
     """Calibrate the camera using known object points and image points."""
@@ -56,6 +75,8 @@ def get_undistort_function():
         return cv2.remap(frame, mapx, mapy, cv2.INTER_LINEAR)
 
     return undistort
+
+
 
 def draw_grid_corners(image):
     """Draws the corner pixel coordinates on a copy of the input image and returns it."""

@@ -19,7 +19,7 @@ def main():
         calibrate.test(frame)
         
         undistort_func = calibrate.get_undistort_function()
-        undistort = undistort_func(frame)
+        undistort = calibrate.warp_perspective(frame)
 
         # Remove above horizon
         # frame = util.rect(frame, 0, 1, 0.48, 1)
