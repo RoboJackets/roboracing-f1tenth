@@ -32,11 +32,8 @@ private:
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
 
     void udp_callback(const std_msgs::msg::String & msg) {
-        if (count % 2 == 0) {
-            this->do_send("V=2.0", JETSON_IP, 8888);
-        } else {
-            this->do_send("V=0.0", JETSON_IP, 8888);
-        }
+        RCLCPP_INFO(this->get_logger(), "Received message: %s", msg.data.c_str());
+        do_send(msg->data);
     }
 
     void udp_timer_callback() {
@@ -49,14 +46,12 @@ private:
     }
 
     void do_send(const std::string& message, const std::string& destination_ip, const unsigned short port) {
-        std::cout << "method called!" << std::endl;
-        auto remote = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(destination_ip), port);
         try {
-            std::cout << "Sent!" << std::endl;
-            socket.send_to(boost::asio::buffer(message), remote);
-
-        } catch (const boost::system::system_error& ex) {
-            std::cout << "Not Sent!"/*things need to go here*/ << std::endl;
+          remote_endpoint_ = udp::endpoint(boost::asio::ip::address::from_string(JETSON_IP), 8888);
+          socket.open(remote_endpoint_.protocol());
+          RCLCPP_INFO(this->get_logger(), "Sending message: %s", message.c_str(), JETSON_IP.c_str(), 8888);
+        } catch (const boost::system::system::system_error& e) {
+          RCLCPP_INFO(this->get_logger(), "Error: %s", e.what());
         }
     }
 
@@ -74,7 +69,7 @@ private:
     if (!error || error == boost::asio::error::message_size)
         do_receive();
     }
-    
+
 
 };
     RCLCPP_COMPONENTS_REGISTER_NODE(comms::UDPClient)
