@@ -59,3 +59,6 @@ For windows, go to Settings > Network & Internet > Ethernet > IP Assignment
 To test UDP commands on windows, use the following commands below (make sure netcat is installed):
 1. ssh roboracing@192.168.20.2
 2. ncat -ul 8888 (to catch incoming UDP commands.) Listening
+
+
+"test" - Daniel
