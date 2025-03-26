@@ -9,6 +9,7 @@
 #include <vector>
 #include <chrono>
 #include <iostream>
+#include "warp.cpp"
 
 using namespace std::chrono_literals;
 
@@ -44,11 +45,11 @@ private:
         cv::Mat thresholded_img(orange_scale_img.size(), CV_8UC1);
         // hystereisis threshold takes into account changes to color thresholds based on lighting
         this->hysteresisThresholding(orange_scale_img, thresholded_img, 20, 40);
-        this->drawBoundingBoxes(thresholded_img);
-        std::cout << "publishing" << std::endl;
+        Warp::apply_top_down_projection(thresholded_img, img);
+        // this->drawBoundingBoxes(thresholded_img);
         // update content of bridge with updated image and corresponsing encoding
         bridge->encoding = "8UC1"; // might actually be 8UC1
-        bridge->image = thresholded_img;
+        bridge->image = img;
         // from our CVImage, we call toImageMsg() to get the underlying sensor_msgs::ImagePtr
         // Then we must dereference this pointer to access the underlying sensor_msgs::msg::Image
         publisher_->publish(*bridge->toImageMsg().get());
@@ -165,8 +166,14 @@ private:
         for (int i = 0; i < contours.size(); i++)
         {
             auto cnt = contours[i];
-            auto rect = cv::boundingRect(cnt);
-            cv::rectangle(img, cv::Point(rect.x, rect.y), cv::Point(rect.x + rect.width, rect.y + rect.height), 128, 5);
+            if (cv::contourArea(cnt) >= 800) {
+                auto rect = cv::boundingRect(cnt);
+                cv::rectangle(img, cv::Point(rect.x, rect.y), cv::Point(rect.x + rect.width, rect.y + rect.height), 128, 5);
+                cv::Moments moment = cv::moments(cnt);
+                int cx = moment.m10 / moment.m00;
+                int cy = moment.m01 / moment.m00;
+                cv::line(img, cv::Point(cx, cy), cv::Point(img.cols/2 - 1, img.rows - 1), 128, 5);
+            }
         }
     }
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
