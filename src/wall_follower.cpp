@@ -62,17 +62,17 @@ private:
 
 
     void angleCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
-        RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, 
-    "LiDAR Info -> angle_min: %f, angle_max: %f, angle_increment: %f, range_size: %lu",
-    msg->angle_min, msg->angle_max, msg->angle_increment, msg->ranges.size());
+    //     RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, 
+    // "LiDAR Info -> angle_min: %f, angle_max: %f, angle_increment: %f, range_size: %lu",
+    // msg->angle_min, msg->angle_max, msg->angle_increment, msg->ranges.size());
 
 
         double theta = 70 * M_PI / 180;
-        int a_index = (int) (((theta/2) - msg->angle_min) / msg->angle_increment);
-        int b_index = (int) (((-theta/2) - msg->angle_min) / msg->angle_increment);
+        int a_index = (int) (((theta/1.5) - msg->angle_min) / msg->angle_increment);
+        int b_index = (int) (((-theta/1.5) - msg->angle_min) / msg->angle_increment);
         
-        RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, 
-    "Calculated Indices -> a_index: %d, b_index: %d", a_index, b_index);
+        //RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, 
+    //"Calculated Indices -> a_index: %d, b_index: %d", a_index, b_index);
 
 
         float a = msg->ranges[a_index];
@@ -85,14 +85,15 @@ private:
 
         
         
-        RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "Distance A: %d\t Distance B: %d", a, b);
-        
-        double alpha = atan((a * cos(theta) - b) / (a * sin(theta)));
-        
-        double AB = b * cos(alpha);
-        double CD = AB + 1.5 * sin(alpha);
+        RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "Distance A: %f\t Distance B: %f", a, b);
+        error = a - 1;
+        // double alpha = atan((a * cos(theta) - b) / (a * sin(theta)));
+        RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "Error: %f", error);
+        // double AB = b * cos(alpha);
+        // double CD = AB + 1.5 * sin(alpha);
 
-        error = 1 - CD;
+        // double middle_distance = (a + b) / 2.0;
+        // error = desired_trajectory - middle_distance;
     }
 
     void DriveCallback()
@@ -113,7 +114,7 @@ private:
         integral_error = std::min(integral_bound, std::max(integral_error + error, -integral_bound));
         double error_delta = (error - prev_error) / dt;
         prev_error = error;
-        return C * P * error + integral_error * I + error_delta * D;
+        return P * error + integral_error * I + error_delta * D;
     }
 };
 
