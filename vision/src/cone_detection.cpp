@@ -44,12 +44,12 @@ private:
         // TO DO: Test
         cv::Mat thresholded_img(orange_scale_img.size(), CV_8UC1);
         // hystereisis threshold takes into account changes to color thresholds based on lighting
-        this->hysteresisThresholding(orange_scale_img, thresholded_img, 20, 40);
-        Warp::apply_top_down_projection(thresholded_img, img);
+        // this->hysteresisThresholding(orange_scale_img, thresholded_img, 20, 40);
+        Warp::apply_top_down_projection(img, thresholded_img);
         // this->drawBoundingBoxes(thresholded_img);
         // update content of bridge with updated image and corresponsing encoding
-        bridge->encoding = "8UC1"; // might actually be 8UC1
-        bridge->image = img;
+        bridge->encoding = "rgb8"; // might actually be 8UC1
+        bridge->image = thresholded_img;
         // from our CVImage, we call toImageMsg() to get the underlying sensor_msgs::ImagePtr
         // Then we must dereference this pointer to access the underlying sensor_msgs::msg::Image
         publisher_->publish(*bridge->toImageMsg().get());
