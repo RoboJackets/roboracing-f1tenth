@@ -1,4 +1,0 @@
-[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:[m[K In member function ‘[01m[Kdouble WallFollower::computeAngleCallback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
-[01m[K/sim_ws/src/wall_follower/src/wall_follower.cpp:47:5:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
-   47 |     [01;35m[K}[m[K
-      |     [01;35m[K^[m[K

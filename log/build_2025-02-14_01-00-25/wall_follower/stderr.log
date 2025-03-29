@@ -1,4 +1,0 @@
-CMake Error at CMakeLists.txt:27 (install):
-  install TARGETS given target "wall_follower" which does not exist.
-
-
