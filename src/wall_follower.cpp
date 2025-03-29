@@ -7,25 +7,25 @@
 class WallFollower : public rclcpp::Node 
 {
 public:
-    WallFollower() : Node("WallFollower")
+    WallFollower() : Node("wall_follower")
     {
-        // this->declare_parameter<double>("C",1);
-        // this->declare_parameter<double>("P", 1);
-        // this->declare_parameter<double>("I", 0);
-        // this->declare_parameter<double>("D", 0.001);
-        // this->declare_parameter<double>("integral_bound", 5);
-        // this->declare_parameter<double>("velocity", 5);
-        // this->declare_parameter<double>("desired_trajectory", 1);
+        this->declare_parameter<double>("C",1);
+        this->declare_parameter<double>("P", 1);
+        this->declare_parameter<double>("I", 0);
+        this->declare_parameter<double>("D", 0.001);
+        this->declare_parameter<double>("integral_bound", 5);
+        this->declare_parameter<double>("velocity", 5);
+        this->declare_parameter<double>("desired_trajectory", 1);
 
-        // C = this->get_parameter("C").as_double();
-        // P = this->get_parameter("P").as_double();
-        // I = this->get_parameter("I").as_double();
-        // D = this->get_parameter("D").as_double();
-        // velocity = this->get_parameter("velocity").as_double();
-        // integral_bound = this->get_parameter("integral_bound").as_double();
-        // desired_trajectory = this->get_parameter("desired_trajectory").as_double();
+        C = this->get_parameter("C").as_double();
+        P = this->get_parameter("P").as_double();
+        I = this->get_parameter("I").as_double();
+        D = this->get_parameter("D").as_double();
+        velocity = this->get_parameter("velocity").as_double();
+        integral_bound = this->get_parameter("integral_bound").as_double();
+        desired_trajectory = this->get_parameter("desired_trajectory").as_double();
 
-        // RCLCPP_INFO_ONCE(this->get_logger(), "C: %f\tP: %f\t I: %f\tD: %f\t Integral Bound: %f", C, P, I, D, integral_bound);
+        RCLCPP_INFO_ONCE(this->get_logger(), "C: %f\tP: %f\t I: %f\tD: %f\t Integral Bound: %f", C, P, I, D, integral_bound);
 
 
         drive_publisher_ = this->create_publisher<ackermann_msgs::msg::AckermannDriveStamped>(
@@ -47,12 +47,13 @@ private:
     rclcpp::Publisher<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr drive_publisher_;
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr lidar_subscriber_;
     rclcpp::TimerBase::SharedPtr timer_;
-    double P = 0.5;
-    double I = 0;
-    double D = 0.000001;
-    double integral_bound = 0;
-    double velocity = 5;
-    double desired_trajectory = 0;
+    double C;
+    double P;
+    double I;
+    double D;
+    double integral_bound;
+    double velocity;
+    double desired_trajectory;
     double integral_error = 0.0;
     double prev_error = 0.0;
     double error = 0;
@@ -81,9 +82,7 @@ private:
             RCLCPP_WARN(this->get_logger(), "Invalid LiDAR readings detected, skipping frame.");
             return;
         }
-
-        
-        
+                
         RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "Distance A: %f\t Distance B: %f", a, b);
         error = a - 1.5;
         // double alpha = atan((a * cos(theta) - b) / (a * sin(theta)));
