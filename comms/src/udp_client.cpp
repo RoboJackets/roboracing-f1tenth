@@ -22,7 +22,7 @@ public:
     do_receive();
    }
 private:
-    const std::String JETSON_IP = "192.168.20.3";
+    const std::string JETSON_IP = "192.168.20.3";
     int count = 0;
     boost::asio::io_service io_service;
     udp::socket socket;
@@ -43,7 +43,7 @@ private:
         if (count % 2 == 0) {
             this->do_send("V=2.0", JETSON_IP, 8888);
         } else {
-            this->do_send("V=2.0", JETSON_IP, 8888);
+            this->do_send("V=0.0", JETSON_IP, 8888);
         }
         count++;
     }
