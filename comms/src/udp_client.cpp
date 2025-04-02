@@ -22,7 +22,7 @@ public:
     do_receive();
    }
 private:
-    const std::String JETSON_IP = "192.168.20.3";
+   
     int count = 0;
     boost::asio::io_service io_service;
     udp::socket socket;
@@ -32,26 +32,31 @@ private:
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
 
     void udp_callback(const std_msgs::msg::String & msg) {
-        RCLCPP_INFO(this->get_logger(), "Received message: %s", msg.data.c_str());
-        do_send(msg->data);
+        if (count % 2 == 0) {
+            this->do_send("V=2.0", "192.168.20.3", 8888);
+        } else {
+            this->do_send("V=0.0", "192.168.20.3", 8888);
+        }
     }
 
     void udp_timer_callback() {
         if (count % 2 == 0) {
-            this->do_send("V=2.0", JETSON_IP, 8888);
+            this->do_send("V=2.0", "192.168.20.3", 8888);
         } else {
-            this->do_send("V=2.0", JETSON_IP, 8888);
+            this->do_send("V=2.0", "192.168.20.3", 8888);
         }
         count++;
     }
 
     void do_send(const std::string& message, const std::string& destination_ip, const unsigned short port) {
+        std::cout << "method called!" << std::endl;
+        auto remote = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(destination_ip), port);
         try {
-          remote_endpoint_ = udp::endpoint(boost::asio::ip::address::from_string(JETSON_IP), 8888);
-          socket.open(remote_endpoint_.protocol());
-          RCLCPP_INFO(this->get_logger(), "Sending message: %s", message.c_str(), JETSON_IP.c_str(), 8888);
-        } catch (const boost::system::system::system_error& e) {
-          RCLCPP_INFO(this->get_logger(), "Error: %s", e.what());
+            std::cout << "Sent!" << std::endl;
+            socket.send_to(boost::asio::buffer(message), remote);
+
+        } catch (const boost::system::system_error& ex) {
+            std::cout << "Not Sent!"/*things need to go here*/ << std::endl;
         }
     }
 
@@ -69,7 +74,7 @@ private:
     if (!error || error == boost::asio::error::message_size)
         do_receive();
     }
-
+    
 
 };
     RCLCPP_COMPONENTS_REGISTER_NODE(comms::UDPClient)
