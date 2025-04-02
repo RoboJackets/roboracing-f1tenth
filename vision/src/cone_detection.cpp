@@ -45,11 +45,12 @@ private:
         cv::Mat thresholded_img(orange_scale_img.size(), CV_8UC1);
         // hystereisis threshold takes into account changes to color thresholds based on lighting
         this->hysteresisThresholding(orange_scale_img, thresholded_img, 20, 40);
-        Warp::apply_top_down_projection(bridge->image, img);
+        this->plotConesOnTopView(thresholded_img, img);
+        Warp::apply_top_down_projection(img, orange_scale_img);
         // this->drawBoundingBoxes(thresholded_img);
         // update content of bridge with updated image and corresponsing encoding
-        bridge->encoding = "bgr8"; // might actually be 8UC1
-        bridge->image = img;
+        bridge->encoding = "8UC1"; // might actually be 8UC1
+        bridge->image = orange_scale_img;
         // from our CVImage, we call toImageMsg() to get the underlying sensor_msgs::ImagePtr
         // Then we must dereference this pointer to access the underlying sensor_msgs::msg::Image
         publisher_->publish(*bridge->toImageMsg().get());
@@ -173,6 +174,39 @@ private:
                 int cx = moment.m10 / moment.m00;
                 int cy = moment.m01 / moment.m00;
                 cv::line(img, cv::Point(cx, cy), cv::Point(img.cols/2 - 1, img.rows - 1), 128, 5);
+            }
+        }
+    }
+
+    void getConePositionss(cv::Mat& img, cv::Mat& out)
+    {
+        out = cv::Mat::zeros(img.rows, img.cols, CV_8UC1);
+        std::vector<std::vector<cv::Point>> contours;
+        cv::findContours(img, contours, 1, 2);
+        for (int i = 0; i < contours.size(); i++)
+        {
+            auto cnt = contours[i];
+            if (cv::contourArea(cnt) >= 800) {
+                // auto rect = cv::boundingRect(cnt);
+                // cv::Moments moment = cv::moments(cnt);
+                // int cx = moment.m10 / moment.m00;
+                // int cy = moment.m01 / moment.m00;
+                // cv::Point bottom_most = cv::Point(cx + rect.x, cy - rect.y / 2);
+                // cv::circle(out, bottom_most, 30, cv::Scalar(255), cv::FILLED);
+                auto rect = cv::boundingRect(cnt);
+            
+                // Find bottom-most point in the contour
+                cv::Point bottom_most = *std::max_element(cnt.begin(), cnt.end(),
+                    [](const cv::Point& a, const cv::Point& b) {
+                        return a.y < b.y; // Compare y-values
+                    });
+
+                // Middle of the bounding box width
+                int mid_x = rect.x + rect.width / 2;
+
+                // Draw circle at bottom-center of contour
+                cv::Point bottom_middle(mid_x, bottom_most.y);
+                cv::circle(out, bottom_middle, 5, cv::Scalar(255), cv::FILLED);
             }
         }
     }
