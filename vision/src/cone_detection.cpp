@@ -45,8 +45,8 @@ private:
         cv::Mat thresholded_img(orange_scale_img.size(), CV_8UC1);
         // hystereisis threshold takes into account changes to color thresholds based on lighting
         this->hysteresisThresholding(orange_scale_img, thresholded_img, 20, 40);
-        this->plotConesOnTopView(thresholded_img, img);
-        Warp::apply_top_down_projection(img, orange_scale_img);
+        Warp::apply_top_down_projection(thresholded_img, img);
+        this->getConePositions(img, orange_scale_img);
         // this->drawBoundingBoxes(thresholded_img);
         // update content of bridge with updated image and corresponsing encoding
         bridge->encoding = "8UC1"; // might actually be 8UC1
@@ -178,22 +178,23 @@ private:
         }
     }
 
-    void getConePositionss(cv::Mat& img, cv::Mat& out)
+    void getConePositions(cv::Mat& img, cv::Mat& out)
     {
         out = cv::Mat::zeros(img.rows, img.cols, CV_8UC1);
+
         std::vector<std::vector<cv::Point>> contours;
         cv::findContours(img, contours, 1, 2);
         for (int i = 0; i < contours.size(); i++)
         {
             auto cnt = contours[i];
             if (cv::contourArea(cnt) >= 800) {
-                // auto rect = cv::boundingRect(cnt);
-                // cv::Moments moment = cv::moments(cnt);
-                // int cx = moment.m10 / moment.m00;
-                // int cy = moment.m01 / moment.m00;
+                auto rect = cv::boundingRect(cnt);
+                cv::Moments moment = cv::moments(cnt);
+                int cx = moment.m10 / moment.m00;
+                int cy = moment.m01 / moment.m00;
                 // cv::Point bottom_most = cv::Point(cx + rect.x, cy - rect.y / 2);
                 // cv::circle(out, bottom_most, 30, cv::Scalar(255), cv::FILLED);
-                auto rect = cv::boundingRect(cnt);
+                // auto rect = cv::minAreaRect(cnt);
             
                 // Find bottom-most point in the contour
                 cv::Point bottom_most = *std::max_element(cnt.begin(), cnt.end(),
@@ -206,7 +207,7 @@ private:
 
                 // Draw circle at bottom-center of contour
                 cv::Point bottom_middle(mid_x, bottom_most.y);
-                cv::circle(out, bottom_middle, 5, cv::Scalar(255), cv::FILLED);
+                cv::circle(out, bottom_middle, 20, cv::Scalar(255), cv::FILLED);
             }
         }
     }
