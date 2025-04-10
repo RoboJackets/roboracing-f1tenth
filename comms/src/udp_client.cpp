@@ -17,8 +17,8 @@ public:
    explicit UDPClient(const rclcpp::NodeOptions& options) : Node("udp_client", options), io_service(), socket(io_service, {udp::v4(), 8888})
    {
     io_service.run();
-    subscription_ = this->create_subscription<std_msgs::msg::ackermann_msgs>("/planning/desired_chassis_state", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
-    timer_ =  this->create_wall_timer(5s, std::bind(&UDPClient::udp_timer_callback, this));
+    subscription_ = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>("/planning/desired_chassis_state", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
+   
     do_receive();
    }
 private:
@@ -31,21 +31,13 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
 
-    void udp_callback(const std_msgs::msg::ackermann_msgs & msg) {
-        std::string velocity = "V=" + std::to_string(msg.velocity);
-        std::string angle = "A=" + std::to_string(msg.steer);
+    void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
+
+        std::string velocity = "V=" + std::to_string(msg->drive.steering_angle);
+        std::string angle = "A=" + std::to_string(msg->drive.speed);
         this->do_send(velocity);
         this->do_send(angle);
         
-    }
-
-    void udp_timer_callback() {
-        if (count % 2 == 0) {
-            this->do_send("V=2.0", "192.168.20.3", 8888);
-        } else {
-            this->do_send("V=2.0", "192.168.20.3", 8888);
-        }
-        count++;
     }
 
     void do_send(const std::string& message, const std::string& destination_ip, const unsigned short port) {
