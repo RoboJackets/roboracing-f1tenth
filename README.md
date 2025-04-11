@@ -22,7 +22,7 @@ Electronic:
 - Jackie Mac Hale
 - Zane Pressley
 
-## [Documentation](https://github.com/RoboJackets/roboracing-f1tenth/wiki
+## [Documentation](https://github.com/RoboJackets/roboracing-f1tenth/wiki)
 
 ### History:
 F1-tenth + AKS autonomous racing starting 2024
