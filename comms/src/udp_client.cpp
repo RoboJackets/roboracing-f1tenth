@@ -5,6 +5,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp_components/register_node_macro.hpp>
 #include <std_msgs/msg/string.hpp>
+#include "ackermann_msgs/msg/ackermann_drive_stamped.hpp"
 
 using namespace std::chrono_literals;
 
@@ -17,26 +18,26 @@ public:
    explicit UDPClient(const rclcpp::NodeOptions& options) : Node("udp_client", options), io_service(), socket(io_service, {udp::v4(), 8888})
    {
     io_service.run();
-    subscription_ = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>("/planning/desired_chassis_state", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
+    subscription_ = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>("/drive", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
    
     do_receive();
    }
 private:
    
-    int count = 0;
+    const std::string JETSON_IP = "192.168.20.3";
     boost::asio::io_service io_service;
     udp::socket socket;
     udp::endpoint receiver_endpoint;
     boost::array<char, 1024> recv_buffer;
     rclcpp::TimerBase::SharedPtr timer_;
-    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
+    rclcpp::Subscription<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr subscription_;
 
     void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
 
-        std::string velocity = "V=" + std::to_string(msg.drive.steering_angle);
-        std::string angle = "A=" + std::to_string(msg.drive.speed);
-        this->do_send(velocity);
-        this->do_send(angle);
+        std::string velocity = "V=" + std::to_string(msg->drive.speed);
+        std::string angle = "A=" + std::to_string(msg->drive.steering_angle);
+        this->do_send(velocity, JETSON_IP, 8888);
+        this->do_send(angle, JETSON_IP, 8888);
         
     }
 
