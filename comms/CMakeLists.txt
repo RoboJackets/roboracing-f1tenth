@@ -10,11 +10,13 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(ackermann_msgs REQUIRED)
 
 
 add_library(${PROJECT_NAME} SHARED src/udp_client.cpp)
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components std_msgs)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components std_msgs ackermann_msgs)
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/)
+
 
 rclcpp_components_register_node(
   ${PROJECT_NAME}

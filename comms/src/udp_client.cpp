@@ -33,8 +33,8 @@ private:
 
     void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
 
-        std::string velocity = "V=" + std::to_string(msg->drive.steering_angle);
-        std::string angle = "A=" + std::to_string(msg->drive.speed);
+        std::string velocity = "V=" + std::to_string(msg.drive.steering_angle);
+        std::string angle = "A=" + std::to_string(msg.drive.speed);
         this->do_send(velocity);
         this->do_send(angle);
         
