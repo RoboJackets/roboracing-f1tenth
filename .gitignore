@@ -1,7 +1,7 @@
-.vscode/
 build/
 install/
 log/
-
-
-
+python_vision/video.MP4
+python_vision/lowres.mp4
+python_vision/*.mp4
+python_vision/*.MP4
