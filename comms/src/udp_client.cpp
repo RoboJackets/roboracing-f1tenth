@@ -15,10 +15,10 @@ namespace comms
 class UDPClient : public rclcpp::Node
 {
 public:
-   explicit UDPClient(const rclcpp::NodeOptions& options) : Node("udp_client", options), io_service(), socket(io_service, {udp::v4(), 8888})
+   explicit UDPClient(const rclcpp::NodeOptions& options) : Node("comms", options), io_service(), socket(io_service, {udp::v4(), 8888})
    {
     io_service.run();
-    subscription_ = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>("/drive", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
+    subscription_ = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>("/comms/drive", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
    
     do_receive();
    }
@@ -33,7 +33,7 @@ private:
     rclcpp::Subscription<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr subscription_;
 
     void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
-
+        RCLCPP_INFO(this->get_logger(), "It works")
         std::string velocity = "V=" + std::to_string(msg->drive.speed);
         std::string angle = "A=" + std::to_string(msg->drive.steering_angle);
         this->do_send(velocity, JETSON_IP, 8888);

@@ -23,4 +23,10 @@ rclcpp_components_register_node(
   PLUGIN "comms::UDPClient"
   EXECUTABLE udp
 )
+
+rclcpp_components_register_node(
+  ${PROJECT_NAME}
+  PLUGIN "comms::AckermannSend"
+  EXECUTABLE send
+)
 ament_package()
