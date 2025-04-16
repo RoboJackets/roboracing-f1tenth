@@ -1,0 +1,3 @@
+[submodule "urg3d_node2"]
+	path = urg3d_node2
+	url = https://github.com/Hokuyo-aut/urg3d_node2.git

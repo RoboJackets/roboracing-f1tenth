@@ -1,13 +1,16 @@
 #include "rclcpp/rclcpp.hpp"
+#include <rclcpp_components/register_node_macro.hpp>
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "ackermann_msgs/msg/ackermann_drive_stamped.hpp"
 #include <algorithm>
 #include <cmath>
 
+namespace wall_follower
+{
 class WallFollower : public rclcpp::Node 
 {
 public:
-    WallFollower() : Node("wall_follower")
+    WallFollower(const rclcpp::NodeOptions& options) : Node("wall_follower", options)
     {
         this->declare_parameter<double>("C",1);
         this->declare_parameter<double>("P", 1);
@@ -115,10 +118,6 @@ private:
         return P * error + integral_error * I + error_delta * D;
     }
 };
-
-int main(int argc, char** argv) {
-    rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<WallFollower>());
-    rclcpp::shutdown();
-    return 0;
+RCLCPP_COMPONENTS_REGISTER_NODE(wall_follower::WallFollower);
 }
+

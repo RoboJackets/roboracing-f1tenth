@@ -33,7 +33,7 @@ private:
     rclcpp::Subscription<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr subscription_;
 
     void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
-        RCLCPP_INFO(this->get_logger(), "It works")
+        RCLCPP_INFO(this->get_logger(), "It works");
         std::string velocity = "V=" + std::to_string(msg->drive.speed);
         std::string angle = "A=" + std::to_string(msg->drive.steering_angle);
         this->do_send(velocity, JETSON_IP, 8888);
