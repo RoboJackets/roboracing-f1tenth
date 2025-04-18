@@ -19,7 +19,7 @@ public:
    {
     io_service.run();
     subscription_ = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>("/comms/drive", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
-   
+    state_publisher_ = this->create_publisher<std_msgs::string>("~/state", 10);
     do_receive();
    }
 private:
@@ -31,6 +31,7 @@ private:
     boost::array<char, 1024> recv_buffer;
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Subscription<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr subscription_;
+    rclcpp::Publisher<std_msgs::string>::SharedPtr state_publisher_;
 
     void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
         RCLCPP_INFO(this->get_logger(), "It works");
@@ -42,10 +43,8 @@ private:
     }
 
     void do_send(const std::string& message, const std::string& destination_ip, const unsigned short port) {
-        std::cout << "method called!" << std::endl;
         auto remote = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(destination_ip), port);
         try {
-            std::cout << "Sent!" << std::endl;
             socket.send_to(boost::asio::buffer(message), remote);
 
         } catch (const boost::system::system_error& ex) {
@@ -59,15 +58,20 @@ private:
                                 boost::bind(&UDPClient::handle_receive, this,
                                 boost::asio::placeholders::error,
                                 boost::asio::placeholders::bytes_transferred));
+
     }
     void handle_receive(const boost::system::error_code& error, size_t bytes_transferred)
     {
-        std::cout << "Received: '" << std::string(recv_buffer.begin(), recv_buffer.begin()+bytes_transferred) << "'\n";
+        std::string state(recv_buffer.begin(), recv_buffer.begin()+bytes_transferred);
+        if (state.compare(std::string("STOPPED")) == 0)
+        {
+            rclcpp::shutdown();
+        }
+        state_publisher_.publish(state);
 
     if (!error || error == boost::asio::error::message_size)
         do_receive();
     }
-    
 
 };
     RCLCPP_COMPONENTS_REGISTER_NODE(comms::UDPClient)
