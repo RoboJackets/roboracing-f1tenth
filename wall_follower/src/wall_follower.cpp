@@ -1,6 +1,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include <rclcpp_components/register_node_macro.hpp>
 #include "sensor_msgs/msg/laser_scan.hpp"
+#include "std_msgs/msg/string.hpp"
 #include "ackermann_msgs/msg/ackermann_drive_stamped.hpp"
 #include <algorithm>
 #include <cmath>
@@ -32,7 +33,7 @@ public:
 
 
         drive_publisher_ = this->create_publisher<ackermann_msgs::msg::AckermannDriveStamped>(
-            "/drive",
+            "/comms/drive",
             rclcpp::SystemDefaultsQoS()
         );
 
@@ -42,6 +43,11 @@ public:
             std::bind(&WallFollower::angleCallback, this, std::placeholders::_1)
         );
 
+        state_subscriber_ = this->create_subscription<std_msgs::msg::String>(
+            "/kart/state",
+            10,
+            std::bind(&WallFollower::stateCallback, this, std::placeholders::_1)
+        );
 
         timer_ = this->create_wall_timer(std::chrono::milliseconds(10), std::bind(&WallFollower::DriveCallback, this));
     }
@@ -49,6 +55,7 @@ public:
 private:
     rclcpp::Publisher<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr drive_publisher_;
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr lidar_subscriber_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr state_subscriber_;
     rclcpp::TimerBase::SharedPtr timer_;
     double C;
     double P;
@@ -60,6 +67,7 @@ private:
     double integral_error = 0.0;
     double prev_error = 0.0;
     double error = 0;
+    std::string kart_state;
 
     rclcpp::Time prev_time_ = this->now();
 
@@ -95,6 +103,11 @@ private:
 
         // double middle_distance = (a + b) / 2.0;
         // error = desired_trajectory - middle_distance;
+    }
+
+    void stateCallback(const std_msgs::msg::String::SharedPtr msg)
+    {
+        kart_state = msg->data;
     }
 
     void DriveCallback()

@@ -15,11 +15,12 @@ namespace comms
 class UDPClient : public rclcpp::Node
 {
 public:
-   explicit UDPClient(const rclcpp::NodeOptions& options) : Node("comms", options), io_service(), socket(io_service, {udp::v4(), 8888})
+   explicit UDPClient(const rclcpp::NodeOptions& options) : Node("udp_node", options), io_service(), socket(io_service, {udp::v4(), 8888})
    {
+    std::cout << "starting udp" << std::endl;
     io_service.run();
     subscription_ = this->create_subscription<ackermann_msgs::msg::AckermannDriveStamped>("/comms/drive", 10, std::bind(&UDPClient::udp_callback, this, std::placeholders::_1));
-    state_publisher_ = this->create_publisher<std_msgs::string>("~/state", 10);
+    state_publisher_ = this->create_publisher<std_msgs::msg::String>("kart/state", 10);
     do_receive();
    }
 private:
@@ -31,7 +32,7 @@ private:
     boost::array<char, 1024> recv_buffer;
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Subscription<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr subscription_;
-    rclcpp::Publisher<std_msgs::string>::SharedPtr state_publisher_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr state_publisher_;
 
     void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
         RCLCPP_INFO(this->get_logger(), "It works");
@@ -67,7 +68,9 @@ private:
         {
             rclcpp::shutdown();
         }
-        state_publisher_.publish(state);
+        auto message = std_msgs::msg::String();
+        message.data = state;
+        state_publisher_->publish(message);
 
     if (!error || error == boost::asio::error::message_size)
         do_receive();

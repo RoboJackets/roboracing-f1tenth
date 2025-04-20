@@ -11,10 +11,11 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(ackermann_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 
 
 add_library(${PROJECT_NAME} SHARED src/wall_follower.cpp)
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs ackermann_msgs)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs ackermann_msgs std_msgs)
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/)
 
 

@@ -13,7 +13,7 @@ find_package(std_msgs REQUIRED)
 find_package(ackermann_msgs REQUIRED)
 
 
-add_library(${PROJECT_NAME} SHARED src/udp_client.cpp)
+add_library(${PROJECT_NAME} SHARED src/udp_client.cpp src/ackermann_send.cpp)
 ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components std_msgs ackermann_msgs)
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/)
 
@@ -27,6 +27,12 @@ rclcpp_components_register_node(
 rclcpp_components_register_node(
   ${PROJECT_NAME}
   PLUGIN "comms::AckermannSend"
-  EXECUTABLE send
+  EXECUTABLE ackermann_send
 )
+
+install(
+       DIRECTORY launch
+       DESTINATION share/${PROJECT_NAME}/launch
+     )
+
 ament_package()
