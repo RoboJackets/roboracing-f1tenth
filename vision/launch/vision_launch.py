@@ -15,13 +15,13 @@ def generate_launch_description():
             package='vision',
             namespace='vision',
             executable='cone',
-            name='vision'
+            name='cone'
         ),
         Node(
             package='vision',
             namespace='vision',
             executable='video',
-            name='vision'
+            name='video'
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(realsense_launch_file)

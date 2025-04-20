@@ -25,4 +25,9 @@ rclcpp_components_register_node(
   EXECUTABLE wallfollower
 )
 
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 ament_package()

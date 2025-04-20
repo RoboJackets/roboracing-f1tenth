@@ -18,7 +18,7 @@ namespace vision
 class LineDetectionNode : public rclcpp::Node
 {
 public:
-    explicit LineDetectionNode(const rclcpp::NodeOptions& options) : rclcpp::Node("vision", options)
+    explicit LineDetectionNode(const rclcpp::NodeOptions& options) : rclcpp::Node("line", options)
     {
         subscription_ = this->create_subscription<sensor_msgs::msg::Image>("/vision/video", 10, std::bind(&LineDetectionNode::color_callback, this, std::placeholders::_1));
         publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/line", 10);
@@ -31,13 +31,13 @@ private:
         cv::Mat img;
         // cv::cvtColor(bridge->image, img, cv::COLOR_BGR2GRAY);
         cv::Mat img2;
-        this->cropHorizon(bridge->image, img2, .48);
-        this->filterRoad(img2, img);
+        // this->cropHorizon(bridge->image, img2, .48);
+        // this->filterRoad(img2, img);
         // cv::GaussianBlur(img, img2, cv::Size(5, 5), 0);
         // cv::Canny(img, img2, 100, 200);
-        // this->dist_to_white(img, img2);
-        // cv::threshold(img2, img, 70, 255, cv::THRESH_BINARY_INV);
-        // this->findLines(img, img2, 5);
+        this->dist_to_white(img, img2);
+        cv::threshold(img2, img, 70, 255, cv::THRESH_BINARY_INV);
+        this->findLines(img, img2, 5);
         bridge->encoding = "8UC1";
         bridge->image = img;
         publisher_->publish(*bridge->toImageMsg().get());

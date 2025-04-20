@@ -14,7 +14,7 @@ def generate_launch_description():
         Node(
             package='wall_follower',
             namespace='wall_follower',
-            executable='wall_follower',
+            executable='wallfollower',
             name='wall_follower'
         )
     ])

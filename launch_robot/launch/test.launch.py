@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from ament_index_python.packages import get_package_share_directory
 
@@ -8,6 +9,25 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
 def generate_launch_description():
+    realsense_launch_file = os.path.join(
+        get_package_share_directory("realsense2_camera"), "launch", "rs_launch.py"
+    )
+    hokuyo_launch_file = os.path.join(
+        get_package_share_directory("urg3d_node2"), "launch", "urg3d_node2.launch.py"
+    )
+
+    realsense = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(realsense_launch_file)
+    )
+
+    lidar = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(hokuyo_launch_file)
+    )
+    bags = ExecuteProcess(
+        cmd=['ros2', 'bag', 'record', '-o', '/home/roboracing/bagfiles/test-ros-bag-' +  str(datetime.datetime.now()).replace(" ", "").replace(".", "_").replace(":", "-"), '-a'],
+        output='screen'
+    )
+    
     vision_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(
             get_package_share_directory('vision'),
@@ -39,8 +59,7 @@ def generate_launch_description():
         vision_node,
         comms_node,
         wall_follower_node,
-        ExecuteProcess(
-            cmd=['ros2', 'bag', 'record', '-a', '-o', 'full_system_bag'],
-            output='screen'
-        )
+        lidar,
+        realsense,
+        bags
     ])

@@ -16,7 +16,7 @@ namespace vision
 class VideoNode : public rclcpp::Node
 {
 public:
-    explicit VideoNode(const rclcpp::NodeOptions& options) : rclcpp::Node("vision", options)
+    explicit VideoNode(const rclcpp::NodeOptions& options) : rclcpp::Node("video", options)
     {
         // this->declare_parameter("path_to_vid", "/home/ubuntu/rj_training_container/training_ws/race.MP4");
         this->declare_parameter("path_to_vid", "/home/ubuntu/rj_training_container/training_ws/race.MP4");

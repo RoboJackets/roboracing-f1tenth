@@ -30,9 +30,9 @@ rclcpp_components_register_node(
   EXECUTABLE ackermann_send
 )
 
-install(
-       DIRECTORY launch
-       DESTINATION share/${PROJECT_NAME}/launch
-     )
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 ament_package()
