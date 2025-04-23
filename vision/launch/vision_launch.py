@@ -11,18 +11,18 @@ def generate_launch_description():
         get_package_share_directory("realsense2_camera"), "launch", "rs_launch.py"
     )
     return LaunchDescription([
-        Node(
-            package='vision',
-            namespace='vision',
-            executable='cone',
-            name='cone'
-        ),
-        Node(
-            package='vision',
-            namespace='vision',
-            executable='video',
-            name='video'
-        ),
+        # Node(
+        #     package='vision',
+        #     namespace='vision',
+        #     executable='cone',
+        #     name='cone'
+        # ),
+        # Node(
+        #     package='vision',
+        #     namespace='vision',
+        #     executable='video',
+        #     name='video'
+        # ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(realsense_launch_file)
         )

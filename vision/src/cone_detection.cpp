@@ -19,7 +19,7 @@ class ConeDetectionNode : public rclcpp::Node
 public:
     explicit ConeDetectionNode(const rclcpp::NodeOptions& options) : rclcpp::Node("cone", options)
     {
-        subscription_ = this->create_subscription<sensor_msgs::msg::Image>("/vision/video", 10, std::bind(&ConeDetectionNode::color_callback, this, std::placeholders::_1));
+        subscription_ = this->create_subscription<sensor_msgs::msg::Image>("/camera/camera/color/image_raw", 10, std::bind(&ConeDetectionNode::color_callback, this, std::placeholders::_1));
         publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/cone", 10);
     }
 private:

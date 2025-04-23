@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <cmath>
 
+// max steering angle for rigatoniv now only 35/30 degrees
+
 namespace wall_follower
 {
 class WallFollower : public rclcpp::Node 

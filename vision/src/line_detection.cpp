@@ -10,6 +10,7 @@
 #include <opencv2/imgproc.hpp>
 #include <chrono>
 #include <cmath>
+// #include "./spline_function.cpp"
 
 using namespace std::chrono_literals;
 
@@ -37,8 +38,11 @@ private:
         // cv::Canny(img, img2, 100, 200);
         this->dist_to_white(img, img2);
         cv::threshold(img2, img, 70, 255, cv::THRESH_BINARY_INV);
-        this->findLines(img, img2, 5);
+        // std::vector<int> x_left, y_left, x_right, y_right;
+        // this->findLines(img, img2, 5);
         bridge->encoding = "8UC1";
+        // SplineFunction s(xvals, yvals);
+        // std::cout << s(12.34) << std::endl;
         bridge->image = img;
         publisher_->publish(*bridge->toImageMsg().get());
     }
@@ -54,11 +58,11 @@ private:
     {
         int rows = img.rows, cols = img.cols;
         out = cv::Mat::zeros(rows, cols, CV_8UC1);
-        findLineRight(img, out, kernel);
-        findLineLeft(img, out, kernel);
+        // findLineRight(img, out, kernel);
+        // findLineLeft(img, out, kernel);
     }
 
-    void findLineLeft(cv::Mat& img, cv::Mat& out, int kernel)
+    void findLineLeft(cv::Mat& img, cv::Mat& out, int kernel, std::vector<int> x_list, std::vector<int> y_list)
     {
         int rows = img.rows, cols = img.cols;
         int horizon = 400;
@@ -66,10 +70,16 @@ private:
         queue.push(cv::Point(rows - 1, 0));
         cv::Point p;
         bool found = false;
+        int count = 0;
         do
         {
             p = queue.front();
             queue.pop();
+            if (count % 25 == 0 && found)
+            {
+                x_list.push_back(p.x);
+                y_list.push_back(p.y);
+            }
             for (int x = 0; x < kernel; x++) 
             {
                 for (int y = 0; y < kernel; y++)
@@ -87,6 +97,7 @@ private:
             {
                 queue.push(cv::Point(p.x - 1, 0));
             }
+            count += 1;
         } while (queue.size() != 0 && p.x > horizon);
     }
 
@@ -111,7 +122,7 @@ private:
         }
     }
 
-    void findLineRight(const cv::Mat& img, cv::Mat& out, int kernel)
+    void findLineRight(const cv::Mat& img, cv::Mat& out, int kernel, std::vector<int> x_list, std::vector<int> y_list)
     {
         int rows = img.rows, cols = img.cols;
         int horizon = 400;
@@ -119,10 +130,16 @@ private:
         queue.push(cv::Point(rows - 1, cols - 1));
         cv::Point p;
         bool found = false;
+        int count = 0;
         do
         {
             p = queue.front();
             queue.pop();
+            if (count % 25 == 0 && found)
+            {
+                x_list.push_back(p.x);
+                y_list.push_back(p.y);
+            }
             for (int x = 0; x < kernel; x++) 
             {
                 for (int y = 0; y < kernel; y++)
@@ -140,6 +157,7 @@ private:
             {
                 queue.push(cv::Point(p.x - 1, cols - 1));
             }
+            count += 1;
         } while (queue.size() != 0 && p.x > horizon);
     }
 
@@ -159,6 +177,7 @@ private:
             }
         }
     }
+    
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
 };

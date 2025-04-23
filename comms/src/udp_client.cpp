@@ -2,6 +2,7 @@
 #include <boost/bind/bind.hpp>
 #include <boost/array.hpp>
 #include <iostream>
+#include <sstream>
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp_components/register_node_macro.hpp>
 #include <std_msgs/msg/string.hpp>
@@ -35,7 +36,6 @@ private:
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr state_publisher_;
 
     void udp_callback(const ackermann_msgs::msg::AckermannDriveStamped::SharedPtr msg) {
-        RCLCPP_INFO(this->get_logger(), "It works");
         std::string velocity = "V=" + std::to_string(msg->drive.speed);
         std::string angle = "A=" + std::to_string(msg->drive.steering_angle);
         this->do_send(velocity, JETSON_IP, 8888);
@@ -63,17 +63,33 @@ private:
     }
     void handle_receive(const boost::system::error_code& error, size_t bytes_transferred)
     {
-        std::string state(recv_buffer.begin(), recv_buffer.begin()+bytes_transferred);
-        if (state.compare(std::string("STOPPED")) == 0)
+        std::string incoming(recv_buffer.begin(), recv_buffer.begin()+bytes_transferred);
+        std::vector<std::string> split_info = splitString(incoming, ';');
+        // ANGLE=%f;SPEED=%f;STATE=<STOPPED|OFF|MANUAL|AUTONOMOUS>
+        if (split_info[2].compare(std::string("STOPPED")) == 0)
         {
             rclcpp::shutdown();
         }
+        
         auto message = std_msgs::msg::String();
-        message.data = state;
+        message.data = incoming;
         state_publisher_->publish(message);
 
     if (!error || error == boost::asio::error::message_size)
         do_receive();
+    }
+    
+    std::vector<std::string> splitString(const std::string& input, char delimiter)
+    {
+        std::istringstream stream(input);
+        std::string token;
+        std::vector<std::string> output;
+
+        while (std::getline(stream, token, delimiter)) 
+        {
+            output.push_back(token);
+        }
+        return output;
     }
 
 };
