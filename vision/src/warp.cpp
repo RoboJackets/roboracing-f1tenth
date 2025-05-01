@@ -1,52 +1,50 @@
+#ifndef WARP
+#define WARP
+
 #include <opencv2/core/types.hpp>
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc.hpp>
 #include <vector>
+#include <iostream>
 
 class Warp
 {
 public:
     static void apply_top_down_projection(cv::Mat& input, cv::Mat& output) 
     {
+        // if (!set_)
+        // {
+        set_H_inv_matrix();
+                // set_ = true;
+        // }
         output = cv::Mat::zeros(input.rows, input.cols, CV_8UC1);
-        cv::warpPerspective(input, output, H, input.size());
+        cv::warpPerspective(input, output, Warp::H_inv, input.size());
+        // std::cout << "out = " << std::endl << " " << output << std::endl << std::endl;
+
+    }
+    static void set_H_inv_matrix()
+    {
+        float height = 0.3556;
+        cv::Mat K = (cv::Mat_<double>(3, 3) <<
+            603.47021484375,  0, 326.07391357421875,
+            0,  603.1049194335938, 235.4612274169922,
+            0, 0, 1
+        );
+        cv::Mat R = (cv::Mat_<double>(3, 3) <<
+            1,  0, 0,
+            0,  0, 1,
+            0, -1, 0
+        );
+        cv::Mat t = (cv::Mat_<double>(3, 1) << 0, height, 0);
+        cv::Mat n = (cv::Mat_<double>(3, 1) << 0, 1, 0);
+        cv::Mat H = K * (R - (t * n.t()) / height);
+        Warp::H_inv = H.inv();
+        std::cout << "H_inv = " << std::endl << " " << Warp::H_inv << std::endl << std::endl;
     }
 private:
-    static cv::Mat H;
-    static const int dist = 15;
-    static const int image_width = 1920;
-    static const int image_height = 1080;
+    static cv::Mat H_inv;
+    inline static bool set_ = false;
 };
-const std::vector<cv::Point2f> corner_pixel_coordinates = 
-{
-    {257*2, 363*2}, {199*2, 389*2}, {104*2, 432*2},
-    {356*2, 368*2}, {321*2, 400*2}, {258*2, 458*2},
-    {467*2, 371*2}, {466*2, 405*2}, {465*2, 471*2},
-    {576*2, 371*2}, {611*2, 403*2}, {673*2, 462*2},
-    {677*2, 368*2}, {732*2, 394*2}, {823*2, 439*2},
-    {759*2, 362*2}, {827*2, 384*2}, {924*2, 416*2}
-};
+// bool Warp::set_ = false;
 
-// !!IMPORTANT!!
-// Check python vision to see how we get from this array to following one
-// Understand what the transformations are doing
-// Add cleaner implementation if necessary when adding camera calibration
-// const std::vector<cv::Point3f> corner_grid_coordinates = {
-//     {0, 0, 0}, {0, 1, 0}, {0, 2, 0},
-//     {1, 0, 0}, {1, 1, 0}, {1, 2, 0},
-//     {2, 0, 0}, {2, 1, 0}, {2, 2, 0},
-//     {3, 0, 0}, {3, 1, 0}, {3, 2, 0},
-//     {4, 0, 0}, {4, 1, 0}, {4, 2, 0},
-//     {5, 0, 0}, {5, 1, 0}, {5, 2, 0}
-// };
-
-const std::vector<cv::Point3f> corner_grid_coordinates = 
-{
-    {930, 989, 0}, {930, 1019, 0}, {930, 1049, 0},
-    {960, 989, 0}, {960, 1019, 0}, {960, 1049, 0},
-    {990, 989, 0}, {990, 1019, 0}, {990, 1049, 0},
-    {1020, 989, 0}, {1020, 1019, 0}, {1020, 1049, 0},
-    {1050, 989, 0}, {1050, 1019, 0}, {1050, 1049, 0},
-    {1080, 989, 0}, {1080, 1019, 0}, {1080, 1049, 0}
-};
-cv::Mat Warp::H = cv::findHomography(corner_pixel_coordinates, corner_grid_coordinates); 
+#endif
